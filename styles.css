@@ -258,9 +258,36 @@ h1 span, h2 span { color: var(--blue); }
 .contact-location strong { font-size: 10px; font-weight: 600; }
 .contact-location small { margin-top: 4px; color: #aeb6cb; font-size: 9px; }
 .contact-location small span { padding-left: 4px; color: #55cbe0; }
-.button-light { min-height: 43px; background: white; color: var(--navy); font-size: 10px; }
-.button-light:hover { transform: translateY(-2px); background: #e9f1ff; }
-.button-light span { color: var(--blue); font-size: 14px; }
+.contact-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 0; }
+.button-light {
+  min-height: 48px;
+  gap: 17px;
+  padding: 0 9px 0 19px;
+  border-color: rgba(255, 255, 255, .6);
+  border-radius: 7px;
+  background: linear-gradient(135deg, #fff 0%, #eefbfc 100%);
+  color: #24113b;
+  font-size: 11px;
+  box-shadow: 0 8px 22px rgba(7, 143, 199, .15);
+}
+.button-light:hover {
+  transform: translateY(-2px);
+  border-color: #83d9e8;
+  background: linear-gradient(135deg, #fff 0%, #dcf8fb 100%);
+  box-shadow: 0 12px 26px rgba(7, 143, 199, .22);
+}
+.button-light .button-arrow {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #edf0ff, #d9f8fb);
+  color: #078fc7;
+  font-size: 14px;
+  transition: transform .2s ease;
+}
+.button-light:hover .button-arrow { transform: rotate(45deg); }
 .contact-note { display: block; margin-top: 11px; color: #8192ac; font-size: 8px; }
 .contact-orb { position: absolute; top: -150px; right: 13%; width: 440px; height: 440px; border: 1px solid rgba(173, 200, 239, .12); border-radius: 50%; box-shadow: 0 0 0 38px rgba(173, 200, 239, .035), 0 0 0 78px rgba(173, 200, 239, .025); }
 .contact-decoration { position: absolute; top: 0; right: 0; width: 43%; height: 100%; overflow: hidden; }
