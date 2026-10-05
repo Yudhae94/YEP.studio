@@ -9,14 +9,14 @@ const files = new Map([
   ["/index.html", "index.html"],
   ["/styles.css", "styles.css"],
   ["/script.js", "script.js"],
-  ["/logo.svg", "logo.svg"],
-  ["/logo-icon.svg", "logo-icon.svg"],
+  ["/logo-icon.png", "logo-icon.png"],
+  ["/logo-lockup.png", "logo-lockup.png"],
 ]);
 const contentTypes = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
   ".js": "text/javascript; charset=utf-8",
-  ".svg": "image/svg+xml",
+  ".png": "image/png",
 };
 
 if (!Number.isInteger(port) || port < 1 || port > 65535) {
