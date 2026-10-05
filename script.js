@@ -1,7 +1,33 @@
 const menuButton = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector("#site-nav");
+const scrollProgress = document.querySelector(".scroll-progress");
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+if (scrollProgress) {
+  let scrollFrame = 0;
+
+  const updateScrollProgress = () => {
+    scrollFrame = 0;
+    const scrollableHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const progress =
+      scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0;
+    scrollProgress.style.transform = `scaleX(${progress})`;
+  };
+
+  const requestScrollProgressUpdate = () => {
+    if (!scrollFrame) {
+      scrollFrame = window.requestAnimationFrame(updateScrollProgress);
+    }
+  };
+
+  window.addEventListener("scroll", requestScrollProgressUpdate, {
+    passive: true,
+  });
+  window.addEventListener("resize", requestScrollProgressUpdate);
+  updateScrollProgress();
+}
 
 if (!prefersReducedMotion.matches && "IntersectionObserver" in window) {
   document.documentElement.classList.add("motion-ready");
