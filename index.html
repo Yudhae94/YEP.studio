@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="YEP.studio membangun solusi digital untuk pelayanan publik, infrastruktur, tim, dan bisnis melalui SIPERAN, NMS, Absensi, dan sistem kasir."
+      content="YEP.studio adalah digital studio untuk website, sistem bisnis, dan produk digital."
     />
-    <meta name="theme-color" content="#160522" />
+    <meta name="theme-color" content="#171715" />
     <link rel="icon" type="image/png" href="/logo-icon.png" />
     <title>YEP.studio — Solusi Digital untuk Publik &amp; Bisnis</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,346 +16,430 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
   </head>
   <body>
+    <div class="page-backdrop" aria-hidden="true">
+      <span class="paving-lines"></span>
+      <i class="walker walker-one"><b></b></i>
+      <i class="walker walker-two"><b></b></i>
+      <i class="walker walker-three"><b></b></i>
+      <i class="walker walker-four"><b></b></i>
+      <i class="walker walker-five"><b></b></i>
+      <i class="walker walker-six"><b></b></i>
+      <i class="walker walker-seven"><b></b></i>
+      <span class="hero-ring hero-ring-one"></span>
+      <span class="hero-ring hero-ring-two"></span>
+    </div>
     <div class="scroll-progress" aria-hidden="true"></div>
     <header class="site-header">
-      <div class="container nav-wrap">
-        <a class="brand" href="#home" aria-label="YEP.studio, beranda">
-          <img class="brand-icon" src="/logo-icon.png" alt="" width="50" height="64" />
-          <img class="brand-wordmark" src="/logo-wordmark.png" alt="YEP.STUDIO, since 2026" width="150" height="38" />
+      <a class="header-brand" href="#home" aria-label="YEP.studio, sejak 2026">
+        <img class="brand-mark" src="/logo-icon.png" alt="" width="48" height="58" />
+        <span class="brand-copy">
+          <strong>YEP.STUDIO</strong>
+          <small>SINCE 2026</small>
+        </span>
+      </a>
+      <div class="header-actions">
+        <a class="header-book" href="#contact">
+          Mari berkolaborasi
+          <span class="calendar-mark" aria-hidden="true">↗</span>
         </a>
+        <nav class="site-nav" id="site-nav" aria-label="Navigasi utama">
+          <a href="#about">Tentang</a>
+          <a href="#services">Layanan</a>
+          <a href="#projects">Proyek</a>
+          <a href="#contact">Kontak</a>
+        </nav>
         <button
-          class="menu-toggle"
+          class="menu-pill menu-toggle"
           type="button"
-          aria-label="Buka navigasi"
+          aria-label="Buka menu"
           aria-expanded="false"
           aria-controls="site-nav"
         >
-          <span></span><span></span>
+          <span class="menu-icon" aria-hidden="true"><i></i><i></i></span>
+          <span class="menu-toggle-label">Menu</span>
         </button>
-        <nav class="site-nav" id="site-nav" aria-label="Navigasi utama">
-          <a href="#about">Tentang</a>
-          <a href="#projects">Proyek</a>
-          <a href="#values">Pendekatan</a>
-          <a class="nav-cta" href="#contact">Mari berkolaborasi <span aria-hidden="true">↗</span></a>
-        </nav>
       </div>
     </header>
 
     <main>
-      <section class="hero section-shell" id="home">
-        <div class="hero-grid container">
-          <div class="hero-copy reveal reveal--left">
-            <p class="eyebrow"><span class="status-dot"></span> Studio pengembangan aplikasi</p>
-            <h1>Teknologi<br />untuk <span>kemajuan.</span></h1>
-            <p class="hero-description">
-              Solusi digital untuk publik &amp; bisnis. Kami membangun aplikasi yang
-              memudahkan layanan, menjaga infrastruktur, dan menggerakkan usaha.
-            </p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="#projects">
-                Lihat proyek kami <span aria-hidden="true">↗</span>
-              </a>
-              <a class="text-link" href="#about">Kenali YEP.studio <span aria-hidden="true">↓</span></a>
-            </div>
-            <div class="hero-proof" aria-label="Fokus YEP.studio">
-              <span>Pelayanan publik</span>
-              <i aria-hidden="true"></i>
-              <span>Infrastruktur</span>
-              <i aria-hidden="true"></i>
-              <span>Bisnis lokal</span>
-            </div>
+      <section class="hero" id="home">
+        <div class="hero-content">
+          <div class="hero-kicker">
+            <span class="live-dot"></span>
+            Siap mewujudkan ide digital Anda
           </div>
-
-          <div class="hero-art reveal reveal--right" aria-hidden="true">
-            <div class="art-orbit orbit-one"></div>
-            <div class="art-orbit orbit-two"></div>
-            <div class="art-glow"></div>
-            <div class="dashboard-window">
-              <div class="window-top">
-                <div class="window-brand"><span class="mini-mark">Y</span> workspace</div>
-                <div class="window-dots"><i></i><i></i><i></i></div>
-              </div>
-              <div class="window-body">
-                <aside class="dashboard-sidebar">
-                  <span class="side-active"></span><span></span><span></span><span></span>
-                </aside>
-                <div class="dashboard-content">
-                  <div class="dashboard-heading">
-                    <div><span class="skeleton short"></span><span class="skeleton title"></span></div>
-                    <span class="avatar-small">Y</span>
-                  </div>
-                  <div class="metric-row">
-                    <div class="metric-card"><span class="metric-label">Solusi</span><b>4 produk</b><span class="metric-up">SIPERAN · NMS · KASIR · ABSENSI</span></div>
-                    <div class="metric-card"><span class="metric-label">Fokus</span><b>4 bidang</b><span class="metric-up">Publik · jaringan · bisnis · tim</span></div>
-                  </div>
-                  <div class="chart-card">
-                    <div class="chart-label"><span class="skeleton short"></span><span>•••</span></div>
-                    <div class="chart-area">
-                      <div class="chart-gridline"></div><div class="chart-gridline"></div><div class="chart-gridline"></div>
-                      <svg viewBox="0 0 420 115" role="presentation" aria-hidden="true">
-                        <defs>
-                          <linearGradient id="chart-fill" x1="0" x2="0" y1="0" y2="1">
-                            <stop offset="0%" stop-color="#78a9f8" stop-opacity=".34" />
-                            <stop offset="100%" stop-color="#78a9f8" stop-opacity="0" />
-                          </linearGradient>
-                        </defs>
-                        <path d="M0 86 C28 78 33 84 57 65 S91 69 115 57 S150 68 177 43 S218 61 239 48 S277 50 302 28 S342 47 363 23 S396 33 420 12 V115 H0Z" fill="url(#chart-fill)" />
-                        <path d="M0 86 C28 78 33 84 57 65 S91 69 115 57 S150 68 177 43 S218 61 239 48 S277 50 302 28 S342 47 363 23 S396 33 420 12" fill="none" stroke="#6495e8" stroke-width="3" stroke-linecap="round" />
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="dashboard-footer"><span class="live-pulse"></span> Semua sistem berjalan normal</div>
-                </div>
-              </div>
-            </div>
-            <div class="float-card float-network">
-              <span class="float-icon network-icon" aria-hidden="true">⌘</span>
-              <span><strong>Jaringan aktif</strong><small>Semua perangkat terhubung</small></span>
-              <i class="live-pulse"></i>
-            </div>
-            <div class="float-card float-report">
-              <span class="report-icon" aria-hidden="true">↗</span>
-              <span><strong>Ide → solusi</strong><small>Dimulai dari kebutuhan nyata</small></span>
-            </div>
-            <span class="art-caption"><span></span> Dirancang untuk dampak nyata</span>
+          <p class="hero-overline">
+            YEP.studio <span>·</span> Karawang, Jawa Barat
+          </p>
+          <h1>
+            Teknologi untuk<br />
+            <span class="headline-highlight">kemajuan Anda.</span>
+          </h1>
+          <p class="hero-description">
+            Kami membangun solusi digital yang memudahkan layanan,
+            menjaga infrastruktur, dan menggerakkan bisnis.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contact">
+              Mari berkolaborasi <span aria-hidden="true">↗</span>
+            </a>
+            <a class="button button-secondary" href="#projects">
+              Lihat proyek kami <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <div class="hero-bottom-note">
+            <span>01 / 04</span>
+            <span class="note-rule"></span>
+            <span>Solusi digital untuk kebutuhan nyata</span>
           </div>
         </div>
-        <div class="hero-bottom container reveal">
-          <span>MEMBANGUN MASA DEPAN DIGITAL</span>
-          <span class="hero-bottom-line"></span>
-          <span>01 — 04</span>
-        </div>
+        <a class="floating-contact" href="#contact">
+          <span class="float-close" aria-hidden="true">×</span>
+          <span class="floating-label">Punya ide yang ingin diwujudkan?</span>
+          <strong>Mari mulai percakapan <span aria-hidden="true">↗</span></strong>
+          <span class="floating-meta">Respons cepat · Karawang, Indonesia</span>
+        </a>
+        <a class="scroll-cue" href="#services" aria-label="Gulir untuk melihat layanan">
+          <span></span>
+        </a>
       </section>
 
-      <section class="intro section-pad" id="about">
-        <div class="container intro-grid">
-          <div class="reveal reveal--left">
-            <p class="eyebrow">01 / Tentang YEP.studio</p>
-            <h2>Teknologi terbaik terasa <span>sederhana.</span></h2>
+      <section class="services section-pad" id="services">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <p class="eyebrow">01 / Apa yang kami kerjakan</p>
+              <h2>Satu studio.<br /><span>Banyak kemungkinan.</span></h2>
+            </div>
+            <p class="section-intro">
+              Dari kehadiran digital pertama hingga sistem operasional yang
+              kompleks — kami membangun solusi yang pas untuk tahap bisnis Anda.
+            </p>
           </div>
-          <div class="intro-copy reveal reveal--right">
-            <p>
-              YEP.studio adalah studio pengembangan aplikasi web dan multiplatform.
-              Kami percaya teknologi seharusnya membantu orang bekerja lebih baik—
-              bukan membuat segalanya terasa lebih rumit.
-            </p>
-            <p>
-              Dari pelayanan publik hingga operasional bisnis, kami mengubah
-              kebutuhan sehari-hari menjadi produk digital yang praktis dan siap
-              berkembang.
-            </p>
-            <a class="text-link dark-link" href="#values">Cara kami bekerja <span aria-hidden="true">↗</span></a>
+          <div class="service-grid">
+            <article class="service-card reveal">
+              <div class="service-top">
+                <span>01</span>
+                <span class="service-icon" aria-hidden="true">↗</span>
+              </div>
+              <h3>Website</h3>
+              <p>Website cepat dan berkarakter, dirancang untuk mengubah pengunjung menjadi pelanggan.</p>
+              <ul>
+                <li>Profil Perusahaan</li>
+                <li>Halaman Promosi</li>
+                <li>E-Commerce</li>
+              </ul>
+              <a class="card-link" href="#contact" aria-label="Diskusikan proyek website">
+                Diskusikan proyek <span aria-hidden="true">↗</span>
+              </a>
+            </article>
+            <article class="service-card reveal">
+              <div class="service-top">
+                <span>02</span>
+                <span class="service-icon" aria-hidden="true">⌘</span>
+              </div>
+              <h3>Sistem Bisnis</h3>
+              <p>Alur kerja yang tertata, informasi yang terhubung, dan operasional yang lebih efisien.</p>
+              <ul>
+                <li>ERP &amp; CRM</li>
+                <li>Stok &amp; Kasir</li>
+                <li>Dasbor Internal</li>
+              </ul>
+              <a class="card-link" href="#contact" aria-label="Diskusikan sistem bisnis">
+                Diskusikan proyek <span aria-hidden="true">↗</span>
+              </a>
+            </article>
+            <article class="service-card reveal">
+              <div class="service-top">
+                <span>03</span>
+                <span class="service-icon" aria-hidden="true">✳</span>
+              </div>
+              <h3>Produk Digital</h3>
+              <p>Produk digital yang menyelesaikan masalah nyata dan tumbuh bersama penggunanya.</p>
+              <ul>
+                <li>Platform SaaS</li>
+                <li>Aplikasi Seluler</li>
+                <li>Portal Pelanggan</li>
+              </ul>
+              <a class="card-link" href="#contact" aria-label="Diskusikan produk digital">
+                Diskusikan proyek <span aria-hidden="true">↗</span>
+              </a>
+            </article>
           </div>
         </div>
       </section>
 
       <section class="projects section-pad" id="projects">
         <div class="container">
-          <div class="section-heading">
+          <div class="section-heading project-heading reveal">
             <div>
               <p class="eyebrow">02 / Proyek pilihan</p>
-              <h2>Solusi untuk tantangan<br />yang <span>sesungguhnya.</span></h2>
+              <h2>Proyek nyata.<br /><span>Manfaat terasa.</span></h2>
             </div>
-            <p class="section-aside">Empat produk. Satu tujuan: membuat layanan, tim, dan bisnis bekerja lebih baik.</p>
+            <p class="section-intro">
+              Setiap proyek dimulai dengan mendengarkan — lalu membangun
+              sesuatu yang benar-benar berguna.
+            </p>
           </div>
-
-          <div class="project-list">
+          <div class="project-grid">
             <article class="project-card project-siperan reveal">
-              <div class="project-info">
-                <div class="project-topline"><span class="project-number">01</span><span class="project-type">PELAYANAN PUBLIK</span></div>
-                <div>
-                  <h3>SIPERAN<span class="project-period">01 / 04</span></h3>
-                  <p class="project-fullname">Sistem Informasi Pelaporan &amp; Arsip Kecamatan</p>
-                  <p class="project-description">Pelaporan digital yang tertata, arsip yang mudah ditemukan, dan informasi yang lebih terbuka.</p>
-                </div>
-                <div class="project-bottom">
-                  <div class="feature-tags"><span>Pelaporan digital</span><span>Arsip terstruktur</span><span>Dashboard real-time</span></div>
-                  <span class="project-impact"><span class="impact-symbol">↗</span> Transparansi &amp; akuntabilitas publik</span>
-                </div>
-              </div>
-              <div class="project-visual siperan-visual" aria-hidden="true">
-                <div class="visual-glow"></div>
-                <div class="paper-card"><span class="paper-line paper-line-short"></span><b>Arsip kecamatan</b><span class="paper-date">Pelaporan &amp; dokumentasi</span><div class="paper-stats"><strong>Terstruktur</strong></div><div class="paper-progress"><i></i></div><div class="paper-bottom"><span>Dokumen</span><b>Mudah ditelusuri</b></div></div>
-                <div class="report-chip"><span class="chip-check">✓</span><span><b>Arsip digital</b><small>Informasi tertata rapi</small></span></div>
-                <div class="visual-index">S — 01</div>
-              </div>
-            </article>
-
-            <article class="project-card project-nms reveal">
-              <div class="project-info">
-                <div class="project-topline"><span class="project-number">02</span><span class="project-type">INFRASTRUKTUR JARINGAN</span></div>
-                <div>
-                  <h3>NMS<span class="project-period">02 / 04</span></h3>
-                  <p class="project-fullname">Network Monitoring System</p>
-                  <p class="project-description">Pantau perangkat dan kondisi jaringan secara menyeluruh, sebelum masalah mengganggu layanan.</p>
-                </div>
-                <div class="project-bottom">
-                  <div class="feature-tags"><span>Monitoring perangkat</span><span>Alert otomatis</span><span>Visualisasi topologi</span></div>
-                  <span class="project-impact"><span class="impact-symbol">↗</span> Reliabilitas jaringan pemerintah</span>
-                </div>
-              </div>
-              <div class="project-visual nms-visual" aria-hidden="true">
-                <div class="visual-glow"></div>
-                <div class="topology-card">
-                  <div class="topology-heading"><span><i class="live-pulse"></i> Peta jaringan</span><small>STATUS PERANGKAT</small></div>
-                  <div class="topology-map">
-                    <svg viewBox="0 0 330 210" role="presentation">
-                      <path d="M165 36 L83 97 M165 36 L244 97 M83 97 L51 165 M83 97 L137 165 M244 97 L198 165 M244 97 L285 165" />
-                      <path class="path-active" d="M165 36 L83 97 M165 36 L244 97 M83 97 L137 165 M244 97 L198 165" />
-                    </svg>
-                    <span class="node node-main">⌘</span><span class="node node-a"></span><span class="node node-b"></span><span class="node node-c"></span><span class="node node-d"></span><span class="node node-e"></span><span class="node node-f"></span>
+              <a href="#contact" aria-label="Tanya tentang proyek SIPERAN">
+                <div class="project-visual">
+                  <div class="project-visual-top">
+                    <span>SIPERAN / RINGKASAN</span><span>↗</span>
                   </div>
-                  <div class="topology-status"><span><i></i> Pemantauan perangkat</span><span>Visualisasi topologi</span></div>
-                </div>
-                <div class="network-chip"><span class="network-chip-icon">⌁</span><span><b>Informasi jaringan</b><strong>Dalam satu tampilan</strong></span></div>
-                <div class="visual-index">N — 02</div>
-              </div>
-            </article>
-
-            <article class="project-card project-kasir reveal">
-              <div class="project-info">
-                <div class="project-topline"><span class="project-number">03</span><span class="project-type">DIGITALISASI BISNIS</span></div>
-                <div>
-                  <h3>KASIR<span class="project-period">03 / 04</span></h3>
-                  <p class="project-fullname">Point of Sale System</p>
-                  <p class="project-description">Transaksi lebih cepat, stok lebih terkontrol, dan laporan penjualan yang jelas dalam satu sistem.</p>
-                </div>
-                <div class="project-bottom">
-                  <div class="feature-tags"><span>Transaksi cepat</span><span>Manajemen stok</span><span>Laporan penjualan</span></div>
-                  <span class="project-impact"><span class="impact-symbol">↗</span> UMKM &amp; ekonomi lokal</span>
-                </div>
-              </div>
-              <div class="project-visual kasir-visual" aria-hidden="true">
-                <div class="visual-glow"></div>
-                <div class="pos-card">
-                  <div class="pos-heading"><span class="pos-logo">K</span><span><b>Kasir</b><small>Contoh transaksi</small></span><span class="pos-menu">•••</span></div>
-                  <div class="pos-item"><span class="product-thumb product-one">K</span><span><b>Kopi susu</b><small>1 × Rp18.000</small></span><strong>Rp18.000</strong></div>
-                  <div class="pos-item"><span class="product-thumb product-two">C</span><span><b>Croissant</b><small>2 × Rp15.000</small></span><strong>Rp30.000</strong></div>
-                  <div class="pos-total"><span>Total pembayaran</span><b>Rp48.000</b></div>
-                  <div class="pos-pay">Lanjutkan pembayaran <span>→</span></div>
-                </div>
-                <div class="sale-chip"><span>↗</span><span><small>Penjualan hari ini</small><b>+18,4%</b></span></div>
-                <div class="visual-index">K — 03</div>
-              </div>
-            </article>
-
-            <article class="project-card project-absensi reveal">
-              <div class="project-info">
-                <div class="project-topline"><span class="project-number">04</span><span class="project-type">MANAJEMEN KEHADIRAN</span></div>
-                <div>
-                  <h3>ABSENSI<span class="project-period">04 / 04</span></h3>
-                  <p class="project-fullname">Sistem Informasi Absensi</p>
-                  <p class="project-description">Catat kehadiran tim, pantau jadwal, dan susun rekap harian dalam satu alur yang lebih rapi.</p>
-                </div>
-                <div class="project-bottom">
-                  <div class="feature-tags"><span>Pencatatan kehadiran</span><span>Jadwal kerja</span><span>Rekap otomatis</span></div>
-                  <span class="project-impact"><span class="impact-symbol">↗</span> Kedisiplinan &amp; transparansi kerja</span>
-                </div>
-              </div>
-              <div class="project-visual absensi-visual" aria-hidden="true">
-                <div class="visual-glow"></div>
-                <div class="attendance-card">
-                  <div class="attendance-heading">
-                    <span class="attendance-logo">A</span>
-                    <span><b>Absensi</b><small>Ringkasan kehadiran</small></span>
-                    <span class="attendance-menu">•••</span>
-                  </div>
-                  <div class="attendance-summary"><span>Hari ini</span><b>Rekap kehadiran tim</b></div>
-                  <div class="attendance-progress"><i></i></div>
-                  <div class="attendance-row">
-                    <span class="attendance-avatar avatar-violet">RA</span>
-                    <span><b>Rina A.</b><small>Masuk 08:02</small></span>
-                    <span class="attendance-status">Hadir</span>
-                  </div>
-                  <div class="attendance-row">
-                    <span class="attendance-avatar avatar-cyan">DS</span>
-                    <span><b>Dimas S.</b><small>Masuk 08:11</small></span>
-                    <span class="attendance-status">Hadir</span>
-                  </div>
-                  <div class="attendance-row">
-                    <span class="attendance-avatar avatar-plum">NP</span>
-                    <span><b>Nadia P.</b><small>Jadwal tercatat</small></span>
-                    <span class="attendance-status status-schedule">Jadwal</span>
+                  <div class="siperan-preview">
+                    <div class="preview-sidebar">
+                      <b>S.</b><i></i><i></i><i></i>
+                    </div>
+                    <div class="preview-content">
+                      <small>LAPORAN · DASHBOARD</small>
+                      <strong>Laporan &amp; arsip</strong>
+                      <div class="preview-stat-row">
+                        <span>Layanan<b>Pelaporan</b></span>
+                        <span>Arsip<b>Terstruktur</b></span>
+                        <span>Status<b>Terpantau</b></span>
+                      </div>
+                      <div class="preview-lines"><i></i><i></i><i></i></div>
+                    </div>
                   </div>
                 </div>
-                <div class="attendance-chip">
-                  <span class="attendance-calendar" aria-hidden="true">✓</span>
-                  <span><b>Rekap lebih rapi</b><small>Kehadiran &amp; jadwal tim</small></span>
+                <div class="project-meta">
+                  <div><span>LAYANAN PUBLIK</span><h3>SIPERAN</h3></div>
+                  <span class="project-arrow">↗</span>
                 </div>
-                <div class="visual-index">A — 04</div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="values section-pad" id="values">
-        <div class="container">
-          <div class="values-heading reveal reveal--left">
-            <p class="eyebrow">03 / Nilai yang kami pegang</p>
-            <h2>Dirancang dengan tujuan.<br /><span>Dibangun dengan integritas.</span></h2>
-          </div>
-          <div class="value-grid">
-            <article class="value-item reveal"><span class="value-icon" aria-hidden="true">↗</span><span class="value-index">01</span><h3>Efisiensi</h3><p>Menghilangkan langkah yang tidak perlu agar waktu bisa digunakan untuk hal yang lebih berarti.</p></article>
-            <article class="value-item reveal"><span class="value-icon value-icon-shield" aria-hidden="true">◇</span><span class="value-index">02</span><h3>Transparansi</h3><p>Menyajikan informasi yang jelas dan mudah diakses untuk keputusan yang lebih baik.</p></article>
-            <article class="value-item reveal"><span class="value-icon value-icon-lock" aria-hidden="true">⌑</span><span class="value-index">03</span><h3>Keamanan</h3><p>Menempatkan kepercayaan dan perlindungan data sebagai bagian penting dari setiap solusi.</p></article>
-            <article class="value-item reveal"><span class="value-icon value-icon-spark" aria-hidden="true">✳</span><span class="value-index">04</span><h3>Desain premium</h3><p>Membuat teknologi yang intuitif, konsisten, dan menyenangkan untuk digunakan setiap hari.</p></article>
-          </div>
-        </div>
-      </section>
-
-      <section class="contact section-pad" id="contact">
-        <div class="container contact-card reveal">
-          <div class="contact-orb"></div>
-          <div class="contact-content">
-            <p class="eyebrow"><span class="status-dot"></span> Punya ide yang ingin diwujudkan?</p>
-            <h2>Mari buat sesuatu<br /><span>yang berdampak.</span></h2>
-            <p>Setiap solusi besar dimulai dari percakapan. Ceritakan tantangan Anda—kita cari jalan keluarnya bersama.</p>
-            <a
-              class="contact-location"
-              href="https://www.google.com/maps/search/?api=1&amp;query=Perumahan%20Prime%20Panorama%20Village%2C%20Kabupaten%20Karawang%2C%20Jawa%20Barat"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
-                <circle cx="12" cy="10" r="2.3" stroke="currentColor" stroke-width="1.7" />
-              </svg>
-              <span>
-                <strong>Perumahan Prime Panorama Village</strong>
-                <small>Kabupaten Karawang, Jawa Barat <span aria-hidden="true">↗</span></small>
-              </span>
-            </a>
-            <div class="contact-actions">
-              <a class="button button-light" href="mailto:?subject=Kolaborasi%20dengan%20YEP.studio">
-                <span>Kolaborasi dengan YEP.studio</span>
-                <span class="button-arrow" aria-hidden="true">↗</span>
+                <p>Sistem pelaporan dan arsip digital untuk layanan publik yang lebih tertata.</p>
               </a>
-              <span class="contact-note">Email dan telepon dapat ditambahkan di sini.</span>
+            </article>
+            <article class="project-card project-nms reveal">
+              <a href="#contact" aria-label="Tanya tentang proyek NMS">
+                <div class="project-visual">
+                  <div class="project-visual-top">
+                    <span>NMS / PETA JARINGAN</span><span>↗</span>
+                  </div>
+                  <div class="network-preview">
+                    <div class="network-label">
+                      <span class="status-dot"></span>
+                      PEMANTAUAN JARINGAN
+                      <b>RINGKASAN LANGSUNG</b>
+                    </div>
+                    <div class="network-map" aria-hidden="true">
+                      <i class="network-node node-center">⌘</i>
+                      <i class="network-node node-left"></i>
+                      <i class="network-node node-right"></i>
+                      <i class="network-node node-low-left"></i>
+                      <i class="network-node node-low-center"></i>
+                      <i class="network-node node-low-right"></i>
+                      <span class="network-line line-left"></span>
+                      <span class="network-line line-right"></span>
+                      <span class="network-line line-down-left"></span>
+                      <span class="network-line line-down-right"></span>
+                    </div>
+                    <div class="network-footer">
+                      <span>PEMANTAUAN PERANGKAT</span>
+                      <span>TOPOLOGI JARINGAN</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-meta">
+                  <div><span>INFRASTRUKTUR JARINGAN</span><h3>NMS</h3></div>
+                  <span class="project-arrow">↗</span>
+                </div>
+                <p>Pemantauan perangkat dan jaringan untuk menjaga layanan tetap tersedia.</p>
+              </a>
+            </article>
+            <article class="project-card project-kasir reveal">
+              <a href="#contact" aria-label="Tanya tentang proyek sistem kasir">
+                <div class="project-visual">
+                  <div class="project-visual-top">
+                    <span>KASIR / PENJUALAN HARIAN</span><span>↗</span>
+                  </div>
+                  <div class="pos-preview">
+                    <div class="pos-preview-head">
+                      <b>Ringkasan harian</b><span>•••</span>
+                    </div>
+                    <strong>Kelola usaha Anda.</strong>
+                    <small class="preview-accent">
+                      TRANSAKSI · STOK · LAPORAN
+                    </small>
+                    <div class="sales-bars" aria-hidden="true">
+                      <i></i><i></i><i></i><i></i><i></i><i></i>
+                      <i></i><i></i><i></i><i></i><i></i><i></i>
+                    </div>
+                    <div class="sales-days">
+                      <span>SEN</span><span>SEL</span><span>RAB</span>
+                      <span>KAM</span><span>JUM</span><span>SAB</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-meta">
+                  <div><span>SISTEM BISNIS</span><h3>KASIR</h3></div>
+                  <span class="project-arrow">↗</span>
+                </div>
+                <p>Transaksi, stok, dan laporan penjualan dalam satu sistem yang mudah dipakai.</p>
+              </a>
+            </article>
+            <article class="project-card project-absensi reveal">
+              <a href="#contact" aria-label="Tanya tentang proyek sistem absensi">
+                <div class="project-visual">
+                  <div class="project-visual-top">
+                    <span>TIM / KEHADIRAN</span><span>↗</span>
+                  </div>
+                  <div class="attendance-preview">
+                    <div class="attendance-preview-head">
+                      <span>Kehadiran tim</span><span>Hari ini&nbsp;⌄</span>
+                    </div>
+                    <div class="attendance-number">
+                      <strong>✓</strong>
+                      <span>
+                        Kehadiran dan jadwal<br />
+                        <b>dalam satu ringkasan</b>
+                      </span>
+                      <i>TEAM</i>
+                    </div>
+                    <div class="attendance-track"><i></i></div>
+                    <div class="attendance-person">
+                      <span>01</span>
+                      <b>Catatan kehadiran<small>Rekap harian mudah dibaca</small></b>
+                      <i>TERCATAT</i>
+                    </div>
+                    <div class="attendance-person">
+                      <span>02</span>
+                      <b>Jadwal tim<small>Tersusun dalam satu tempat</small></b>
+                      <i>TERATUR</i>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-meta">
+                  <div><span>MANAJEMEN TIM</span><h3>ABSENSI</h3></div>
+                  <span class="project-arrow">↗</span>
+                </div>
+                <p>Pencatatan kehadiran, jadwal, dan rekap tim dalam satu alur sederhana.</p>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about section-pad" id="about">
+        <div class="container about-layout">
+          <div class="about-heading reveal reveal--left">
+            <p class="eyebrow">03 / Cara kami bekerja</p>
+            <h2>Hasil baik berawal<br />dari <span>pertanyaan tepat.</span></h2>
+          </div>
+          <div class="about-content reveal reveal--right">
+            <p class="about-lead">
+              Kami adalah studio digital yang bekerja dekat dengan orang-orang
+              di balik setiap tantangan.
+            </p>
+            <p>
+              Sebelum menulis kode atau menggambar antarmuka, kami memahami
+              proses, pengguna, dan tujuan Anda. Hasilnya adalah teknologi yang
+              terasa sederhana karena memang dibuat untuk cara Anda bekerja.
+            </p>
+            <div class="principles">
+              <div>
+                <span>01</span>
+                <b>Pahami kebutuhan</b>
+                <small>Mulai dari kebutuhan pengguna.</small>
+              </div>
+              <div>
+                <span>02</span>
+                <b>Bangun dengan tujuan</b>
+                <small>Setiap detail punya tujuan.</small>
+              </div>
+              <div>
+                <span>03</span>
+                <b>Siap untuk berkembang</b>
+                <small>Siap berkembang bersama Anda.</small>
+              </div>
             </div>
           </div>
-          <div class="contact-decoration" aria-hidden="true">
-            <span class="deco-ring deco-ring-one"></span><span class="deco-ring deco-ring-two"></span>
-            <img class="deco-lockup" src="/logo-lockup.png" alt="" /><span class="deco-caption">IDEA → IMPACT</span>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="container contact-card reveal">
+          <p class="eyebrow">04 / Punya tantangan digital?</p>
+          <h2>Mari wujudkan<br /><span>solusi yang lebih baik.</span></h2>
+          <div class="contact-bottom">
+            <p>Ceritakan apa yang ingin Anda bangun. Kami siap membantu menemukan jalan terbaik.</p>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="container footer-main">
-        <a class="brand footer-brand" href="#home" aria-label="YEP.studio, kembali ke atas">
-          <img class="brand-icon" src="/logo-icon.png" alt="" width="50" height="64" />
-          <img class="brand-wordmark" src="/logo-wordmark.png" alt="YEP.STUDIO, since 2026" width="150" height="38" />
+      <div class="container footer-main reveal">
+        <a class="footer-brand" href="#home">
+          <img src="/logo-icon.png" alt="" width="28" height="36" />
+          <span class="footer-brand-copy">
+            <strong>YEP.STUDIO</strong>
+            <small>SINCE 2026</small>
+          </span>
         </a>
-        <p>Solusi digital untuk publik &amp; bisnis.</p>
+        <p>Solusi digital yang dibangun dengan tujuan.</p>
+        <nav class="social-links" aria-label="Media sosial YEP.studio">
+          <a
+            href="https://web.facebook.com/yudha.eka.pratama.381453/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            title="Facebook"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.4 21v-8.2h2.8l.4-3.2h-3.2v-2c0-.9.3-1.5 1.6-1.5h1.7V3.2c-.3 0-1.3-.2-2.5-.2-2.5 0-4.2 1.5-4.2 4.3v2.3H7.2v3.2H10V21h3.4Z"></path></svg>
+          </a>
+          <a
+            href="https://www.instagram.com/yudhae94/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            title="Instagram"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2"></rect><circle cx="12" cy="12" r="4.1"></circle><circle class="social-dot" cx="17.7" cy="6.7" r="1.1"></circle></svg>
+          </a>
+          <a
+            href="https://www.tiktok.com/@yudhae_94"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTok"
+            title="TikTok"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.7 3c.3 2.3 1.6 3.7 3.8 3.9v3.2a9.2 9.2 0 0 1-3.8-1.1v6.7a6.2 6.2 0 1 1-6.2-6.2c.4 0 .8 0 1.2.1v3.5a2.9 2.9 0 1 0 1.7 2.6V3h3.3Z"></path></svg>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/yudha-eka-pratama-3a3a57129/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            title="LinkedIn"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.1 8.4a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM3.4 10h3.4v10.6H3.4V10Zm5.5 0h3.3v1.5h.1a3.6 3.6 0 0 1 3.2-1.8c3.4 0 4 2.2 4 5v5.9h-3.4v-5.2c0-1.2 0-2.7-1.7-2.7s-2 1.3-2 2.6v5.3H8.9V10Z"></path></svg>
+          </a>
+          <a
+            class="whatsapp-button"
+            href="#contact"
+            data-whatsapp-link
+            aria-label="Hubungi YEP.studio melalui WhatsApp"
+            title="WhatsApp"
+          >
+            <svg class="whatsapp-logo" viewBox="0 0 48 48" aria-hidden="true">
+              <path class="whatsapp-bubble" d="M24 5.5a18 18 0 0 0-15.4 27.3L6.2 43l10-2.5A18 18 0 1 0 24 5.5Z"></path>
+              <path class="whatsapp-phone" d="M17.4 13.7c-.7-.1-1.4.1-1.8.8-.7.8-2.2 2.5-2.2 5.7 0 3.3 2.4 6.6 2.8 7 .3.4 4.6 7.3 11.3 9.4 5.4 1.7 6.8 1.3 8 .9 1.2-.2 3.8-1.6 4.3-3.2.6-1.6.6-2.9.4-3.2-.1-.3-.7-.5-1.5-1-.8-.4-4.1-2-4.7-2.2-.7-.3-1.2-.4-1.6.4-.5.8-1.9 2.3-2.3 2.8-.4.4-.8.5-1.6.1-.8-.4-3.1-1.1-5.7-3.4-2.1-1.8-3.5-4.1-3.9-4.9-.4-.8 0-1.2.4-1.6.3-.3.8-.9 1.2-1.4.4-.5.5-.8.8-1.3.2-.5.1-.9 0-1.2-.2-.4-1.5-3.8-2-5.1-.5-1.2-1.1-1.2-1.5-1.2h-.9Z"></path>
+            </svg>
+          </a>
+        </nav>
         <a class="back-top" href="#home">Kembali ke atas <span aria-hidden="true">↑</span></a>
       </div>
-      <div class="container footer-bottom"><span>© 2026 YEP.studio</span><span>Dibuat dengan tujuan, untuk dampak nyata.</span><span>KABUPATEN KARAWANG, JAWA BARAT</span></div>
+      <div class="container footer-bottom reveal">
+        <span>© 2026 YEP.studio</span>
+        <span>Karawang, Jawa Barat, Indonesia</span>
+        <span>TEKNOLOGI UNTUK KEMAJUAN.</span>
+      </div>
     </footer>
   </body>
 </html>

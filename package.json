@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "node build.js",
+    "dev:cloudflare": "npm run build && npx --yes wrangler@4 pages dev dist"
   }
 }
