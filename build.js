@@ -5,6 +5,7 @@ const root = __dirname;
 const output = path.join(root, "dist");
 const files = [
   "index.html",
+  "404.html",
   "styles.css",
   "script.js",
   "logo-icon.png",

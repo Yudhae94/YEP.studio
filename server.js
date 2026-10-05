@@ -7,6 +7,7 @@ const port = Number(process.env.PORT || 5500);
 const files = new Map([
   ["/", "index.html"],
   ["/index.html", "index.html"],
+  ["/404.html", "404.html"],
   ["/styles.css", "styles.css"],
   ["/script.js", "script.js"],
   ["/logo-icon.png", "logo-icon.png"],
@@ -42,8 +43,21 @@ const server = http.createServer((request, response) => {
 
   const file = files.get(pathname);
   if (!file) {
-    response.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
-    response.end("Not found");
+    fs.readFile(path.join(__dirname, "404.html"), (error, content) => {
+      if (error) {
+        console.error("Could not read 404.html:", error);
+        response.writeHead(500, { "Content-Type": "text/plain; charset=utf-8" });
+        response.end("Could not read project file");
+        return;
+      }
+
+      response.writeHead(404, {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-store",
+        "X-Content-Type-Options": "nosniff",
+      });
+      response.end(request.method === "HEAD" ? undefined : content);
+    });
     return;
   }
 
