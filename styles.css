@@ -87,6 +87,14 @@ h1, h2, h3 { font-family: "Manrope", sans-serif; }
   font-weight: 700;
   letter-spacing: 2px;
 }
+.brand-color-flow {
+  color: transparent !important;
+  background: linear-gradient(100deg, #b77cff 5%, #46c7ff 30%, #e9f8ff 48%, #42cfff 68%, #c184ff 92%);
+  background-size: 220% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: brand-color-flow 5s ease-in-out infinite alternate;
+}
 .brand-copy small, .footer-brand-copy small {
   color: #ad7cda;
   font-size: 9px;
@@ -299,6 +307,10 @@ h1, h2, h3 { font-family: "Manrope", sans-serif; }
   text-wrap: balance;
   text-shadow: 0 4px 25px rgba(0,0,0,.18);
 }
+.headline-line {
+  display: inline-block;
+  animation: headline-enter .8s .12s both;
+}
 .headline-highlight {
   display: inline-block;
   padding: .02em .16em .09em;
@@ -306,6 +318,7 @@ h1, h2, h3 { font-family: "Manrope", sans-serif; }
   background: var(--lime);
   color: #111 !important;
   text-shadow: none;
+  animation: headline-enter .8s .34s both, highlight-glow 4s 1.2s ease-in-out infinite;
 }
 .hero-description {
   max-width: 670px;
@@ -525,6 +538,18 @@ h2 span { color: var(--lime); }
   0%, 100% { transform: translateY(0); opacity: 1; }
   70% { transform: translateY(15px); opacity: .2; }
 }
+@keyframes headline-enter {
+  from { opacity: 0; transform: translateY(.32em); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes highlight-glow {
+  0%, 100% { background-color: var(--lime); }
+  50% { background-color: #c3f65c; }
+}
+@keyframes brand-color-flow {
+  from { background-position: 0% 50%; }
+  to { background-position: 100% 50%; }
+}
 
 @media (max-width: 900px) {
   .container { width: min(var(--container), calc(100% - 56px)); }
@@ -681,4 +706,14 @@ h2 span { color: var(--lime); }
   }
   .motion-ready .reveal { opacity: 1; transform: none; }
   .page-backdrop { will-change: auto; }
+  .brand-color-flow {
+    color: var(--lime) !important;
+    background: none;
+    animation: none;
+  }
+  .headline-line, .headline-highlight {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
 }
