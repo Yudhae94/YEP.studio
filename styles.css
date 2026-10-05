@@ -33,7 +33,7 @@ button { font: inherit; }
 .nav-wrap, .site-nav, .brand { display: flex; align-items: center; }
 .nav-wrap { height: 100%; justify-content: space-between; }
 .brand { gap: 10px; color: var(--navy); font: 800 18px "Manrope", sans-serif; letter-spacing: -.8px; }
-.brand img { display: block; width: 176px; height: 42px; }
+.brand img { display: block; width: 220px; height: auto; }
 .brand-mark, .mini-mark {
   display: grid;
   place-items: center;
@@ -246,14 +246,13 @@ h1 span, h2 span { color: var(--blue); }
 .contact-decoration { position: absolute; top: 0; right: 0; width: 43%; height: 100%; overflow: hidden; }
 .deco-ring { position: absolute; top: 38px; left: 28px; width: 246px; height: 246px; border: 1px solid rgba(189, 210, 239, .14); border-radius: 50%; }
 .deco-ring-two { top: 61px; left: 51px; width: 200px; height: 200px; border-color: rgba(189, 210, 239, .11); }
-.deco-mark { position: absolute; top: 85px; left: 93px; color: rgba(219, 231, 248, .88); font: 800 120px/.95 "Manrope", sans-serif; letter-spacing: -15px; }
-.deco-mark span { color: #75a0df; }
-.deco-caption { position: absolute; right: 49px; bottom: 35px; color: #91a4c1; font-size: 8px; font-weight: 700; letter-spacing: 2px; }
+.deco-logo-icon { position: absolute; top: 75px; left: 112px; width: 96px; height: 88px; }
+.deco-caption { position: absolute; right: 49px; bottom: 35px; color: #b296d2; font-size: 8px; font-weight: 700; letter-spacing: 3px; }
 
 .site-footer { padding: 26px 0 19px; background: #fff; }
 .footer-main { display: flex; align-items: center; gap: 23px; padding-bottom: 20px; border-bottom: 1px solid #eaedf1; }
 .footer-brand { font-size: 15px; }.footer-brand .brand-mark { width: 29px; height: 29px; border-radius: 8px; font-size: 15px; }
-.footer-brand img { width: 154px; height: auto; }
+.footer-brand img { width: 194px; height: auto; }
 .footer-main > p { margin: 0; color: #8b94a2; font-size: 10px; }
 .back-top { display: inline-flex; align-items: center; gap: 8px; margin-left: auto; color: #667388; font-size: 9px; font-weight: 600; }
 .back-top span { color: var(--blue); font-size: 13px; }
@@ -276,7 +275,7 @@ h1 span, h2 span { color: var(--blue); }
   .container { width: calc(100% - 40px); }
   .section-pad { padding: 78px 0; }
   .site-header { height: 70px; background: rgba(248, 249, 251, .9); backdrop-filter: blur(12px); }
-  .brand img { width: 154px; height: auto; }
+  .brand img { width: 178px; height: auto; }
   .menu-toggle { display: flex; width: 39px; height: 39px; flex-direction: column; align-items: center; justify-content: center; gap: 5px; border: 1px solid #dfe4eb; border-radius: 6px; background: transparent; }
   .menu-toggle span { width: 15px; height: 1.5px; background: var(--navy); transition: transform .2s ease; }
   .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(3.25px) rotate(45deg); }
@@ -338,7 +337,7 @@ h1 span, h2 span { color: var(--blue); }
   .contact-decoration { top: auto; bottom: 0; width: 53%; height: 180px; opacity: .55; }
   .deco-ring { top: 8px; left: 35px; width: 160px; height: 160px; }
   .deco-ring-two { top: 22px; left: 49px; width: 132px; height: 132px; }
-  .deco-mark { top: 37px; left: 73px; font-size: 82px; letter-spacing: -11px; }
+  .deco-logo-icon { top: 36px; left: 75px; width: 74px; height: auto; }
   .deco-caption { right: 20px; bottom: 14px; font-size: 6px; }
   .site-footer { padding-top: 20px; }
   .footer-main { gap: 12px; }

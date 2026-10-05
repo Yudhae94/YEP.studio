@@ -10,6 +10,7 @@ const files = new Map([
   ["/styles.css", "styles.css"],
   ["/script.js", "script.js"],
   ["/logo.svg", "logo.svg"],
+  ["/logo-icon.svg", "logo-icon.svg"],
 ]);
 const contentTypes = {
   ".html": "text/html; charset=utf-8",
