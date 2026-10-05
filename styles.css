@@ -239,6 +239,25 @@ h1 span, h2 span { color: var(--blue); }
 .contact h2 { margin: 0 0 13px; color: white; font-size: 38px; font-weight: 600; letter-spacing: -2px; line-height: 1.18; }
 .contact h2 span { color: #90b5f3; }
 .contact-content > p:not(.eyebrow) { max-width: 450px; margin: 0 0 20px; color: #b5c1d2; font-size: 11px; line-height: 1.8; }
+.contact-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  margin: 0 0 17px;
+  color: #e9e0f2;
+  transition: color .2s ease;
+}
+.contact-location:hover { color: #7ee4f2; }
+.contact-location > svg {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  color: #43cbe1;
+}
+.contact-location strong, .contact-location small { display: block; }
+.contact-location strong { font-size: 10px; font-weight: 600; }
+.contact-location small { margin-top: 4px; color: #aeb6cb; font-size: 9px; }
+.contact-location small span { padding-left: 4px; color: #55cbe0; }
 .button-light { min-height: 43px; background: white; color: var(--navy); font-size: 10px; }
 .button-light:hover { transform: translateY(-2px); background: #e9f1ff; }
 .button-light span { color: var(--blue); font-size: 14px; }
@@ -338,6 +357,9 @@ h1 span, h2 span { color: var(--blue); }
   .contact-content { padding: 35px 25px; }
   .contact h2 { font-size: 33px; }
   .contact-content > p:not(.eyebrow) { max-width: 330px; font-size: 10px; }
+  .contact-location { gap: 8px; margin-bottom: 15px; }
+  .contact-location strong { font-size: 9px; }
+  .contact-location small { font-size: 8px; }
   .contact-decoration { top: auto; bottom: 0; width: 53%; height: 180px; opacity: .55; }
   .deco-ring { top: 8px; left: 35px; width: 160px; height: 160px; }
   .deco-ring-two { top: 22px; left: 49px; width: 132px; height: 132px; }
