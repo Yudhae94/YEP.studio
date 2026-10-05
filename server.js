@@ -9,11 +9,13 @@ const files = new Map([
   ["/index.html", "index.html"],
   ["/styles.css", "styles.css"],
   ["/script.js", "script.js"],
+  ["/logo.svg", "logo.svg"],
 ]);
 const contentTypes = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
   ".js": "text/javascript; charset=utf-8",
+  ".svg": "image/svg+xml",
 };
 
 if (!Number.isInteger(port) || port < 1 || port > 65535) {
