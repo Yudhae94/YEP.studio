@@ -428,6 +428,10 @@ h1 span, h2 span { color: var(--blue); }
     transform: translateY(-5px) rotate(-1deg);
     box-shadow: 0 22px 42px rgba(36, 58, 87, .16);
   }
+  .project-absensi:hover .attendance-card {
+    transform: translateY(-5px) rotate(1deg);
+    box-shadow: 0 22px 42px rgba(36, 58, 87, .16);
+  }
   .float-network { animation: card-drift 6s ease-in-out infinite; }
   .float-report { animation: card-drift 6.8s ease-in-out .7s infinite; }
   .art-orbit.orbit-one { animation: orbit-turn 34s linear infinite; }
@@ -574,6 +578,63 @@ h1 span, h2 span { color: var(--blue); }
 .project-siperan .project-number { color: #8150a5; }
 .project-nms .project-number { color: #0787b5; }
 .project-kasir .project-number { color: #8a649e; }
+.project-absensi .project-number { color: #078fae; }
+.absensi-visual { background: #e9f3f7; }
+.absensi-visual .visual-glow { background: rgba(21, 179, 213, .17); }
+.attendance-card {
+  position: relative;
+  z-index: 1;
+  width: 248px;
+  padding: 13px 15px 10px;
+  transform: rotate(2deg);
+  border: 1px solid rgba(230, 234, 240, .9);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .97);
+  box-shadow: 0 17px 38px rgba(36, 58, 87, .13);
+  transition: transform .5s cubic-bezier(.2, .7, .2, 1), box-shadow .5s ease;
+}
+.attendance-heading { display: flex; align-items: center; gap: 8px; padding-bottom: 10px; border-bottom: 1px solid #eef0f4; }
+.attendance-logo { display: grid; width: 24px; height: 24px; place-items: center; border-radius: 7px; background: #e7f4f8; color: #0789ae; font: 700 11px "Manrope", sans-serif; }
+.attendance-heading > span:nth-child(2) { flex: 1; }
+.attendance-heading b, .attendance-heading small, .attendance-summary span, .attendance-summary b, .attendance-row b, .attendance-row small { display: block; }
+.attendance-heading b { color: #33445b; font-size: 9px; }
+.attendance-heading small { margin-top: 3px; color: #99a3b0; font-size: 7px; }
+.attendance-menu { color: #9099a6; font-size: 10px; }
+.attendance-summary { display: flex; justify-content: space-between; align-items: baseline; gap: 6px; margin-top: 12px; }
+.attendance-summary span { color: #8d97a5; font-size: 7px; }
+.attendance-summary b { color: #48566a; font-size: 8px; }
+.attendance-progress { height: 4px; margin: 7px 0 5px; overflow: hidden; border-radius: 4px; background: #e8edf2; }
+.attendance-progress i { display: block; width: 78%; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #7452b2, #12b8d4); }
+.attendance-row { display: flex; align-items: center; gap: 8px; padding: 7px 0; border-top: 1px solid #f0f2f5; }
+.attendance-avatar { display: grid; width: 24px; height: 24px; flex: 0 0 24px; place-items: center; border-radius: 50%; font-size: 7px; font-weight: 700; }
+.avatar-violet { background: #f0eafa; color: #7552a2; }
+.avatar-cyan { background: #e4f4f7; color: #0988a5; }
+.avatar-plum { background: #f1eaf5; color: #81549b; }
+.attendance-row > span:nth-child(2) { flex: 1; }
+.attendance-row b { color: #48566a; font-size: 7px; }
+.attendance-row small { margin-top: 2px; color: #96a0ad; font-size: 6px; }
+.attendance-status { padding: 4px 6px; border-radius: 10px; background: #eaf5ef; color: #458466; font-size: 6px; font-weight: 700; }
+.attendance-status.status-schedule { background: #f2edf8; color: #805e9f; }
+.attendance-chip {
+  position: absolute;
+  z-index: 2;
+  right: 13px;
+  bottom: 48px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  transform: rotate(-3deg);
+  border: 1px solid #e8ebef;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 10px 25px rgba(36, 58, 87, .12);
+}
+.attendance-chip b, .attendance-chip small { display: block; }
+.attendance-chip b { color: #536174; font-size: 7px; }
+.attendance-chip small { margin-top: 3px; color: #9aa3b0; font-size: 6px; }
+.attendance-calendar { display: grid; width: 21px; height: 21px; place-items: center; border-radius: 6px; background: #e7f4f7; color: #0789ae; font-size: 10px; font-weight: 700; }
+.project-absensi:hover .attendance-card { transform: translateY(-5px) rotate(1deg); box-shadow: 0 22px 42px rgba(36, 58, 87, .16); }
 .impact-symbol { color: #188c95; }
 .value-icon { background: #f0e9f8; color: #7542a0; }
 .value-icon-shield { background: #e8f5f8; color: #0789ad; }
@@ -631,4 +692,9 @@ h1 span, h2 span { color: var(--blue); }
   .motion-ready .reveal--right {
     filter: none;
   }
+}
+
+@media (max-width: 700px) {
+  .attendance-card { transform: scale(.95) rotate(2deg); }
+  .attendance-chip { right: 19px; bottom: 46px; }
 }
