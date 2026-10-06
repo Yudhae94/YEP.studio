@@ -390,6 +390,42 @@
         <div class="container contact-card reveal">
           <p class="eyebrow">04 / Punya tantangan digital?</p>
           <h2>Mari wujudkan<br /><span>solusi yang lebih baik.</span></h2>
+          <form class="collab-form" data-collab-form novalidate>
+            <p class="collab-title">Ceritakan kebutuhan Anda — langsung terkirim ke email kami.</p>
+            <div class="collab-grid">
+              <label class="collab-field">
+                <span>Nama Anda</span>
+                <input type="text" name="name" placeholder="Nama lengkap" autocomplete="name" required maxlength="80" />
+              </label>
+              <label class="collab-field">
+                <span>Email Anda</span>
+                <input type="email" name="email" placeholder="nama@email.com" autocomplete="email" required maxlength="120" />
+              </label>
+            </div>
+            <label class="collab-field">
+              <span>Jenis kebutuhan</span>
+              <select name="topic" required>
+                <option value="" disabled selected>Pilih salah satu…</option>
+                <option value="Website">Website</option>
+                <option value="Sistem Bisnis">Sistem Bisnis</option>
+                <option value="Produk Digital">Produk Digital</option>
+                <option value="Lainnya">Lainnya</option>
+              </select>
+            </label>
+            <label class="collab-field">
+              <span>Ceritakan ide atau kebutuhan Anda</span>
+              <textarea name="message" rows="4" placeholder="Contoh: Saya butuh website profil perusahaan untuk…" required maxlength="2000"></textarea>
+            </label>
+            <p class="collab-error" data-collab-error role="alert" hidden></p>
+            <div class="collab-actions">
+              <button class="button button-primary collab-submit" type="submit">
+                Kirim via Email <span aria-hidden="true">↗</span>
+              </button>
+              <a class="collab-direct" href="mailto:kenz.studio23@gmail.com?subject=Kolaborasi%20dengan%20KENZ.STUDIO">
+                atau tulis langsung ke kenz.studio23@gmail.com
+              </a>
+            </div>
+          </form>
           <div class="contact-bottom">
             <p>Ceritakan apa yang ingin Anda bangun. Kami siap membantu menemukan jalan terbaik.</p>
           </div>

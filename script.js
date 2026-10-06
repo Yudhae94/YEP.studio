@@ -88,6 +88,111 @@ if (menuButton && siteNav) {
   });
 }
 
+
+const collabForm = document.querySelector("[data-collab-form]");
+const collabError = collabForm
+  ? collabForm.querySelector("[data-collab-error]")
+  : null;
+const collabTargetEmail = "kenz.studio23@gmail.com";
+
+const markCollabField = (field, isValid) => {
+  if (field) {
+    field.setAttribute("aria-invalid", String(!isValid));
+  }
+  return isValid;
+};
+
+const showCollabError = (message) => {
+  if (!collabError) {
+    return;
+  }
+
+  if (!message) {
+    collabError.textContent = "";
+    collabError.hidden = true;
+    return;
+  }
+
+  collabError.textContent = message;
+  collabError.hidden = false;
+};
+
+if (collabForm) {
+  collabForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    showCollabError("");
+
+    const nameField = collabForm.elements.namedItem("name");
+    const emailField = collabForm.elements.namedItem("email");
+    const topicField = collabForm.elements.namedItem("topic");
+    const messageField = collabForm.elements.namedItem("message");
+
+    const name = nameField ? nameField.value.trim() : "";
+    const email = emailField ? emailField.value.trim() : "";
+    const topic = topicField ? topicField.value : "";
+    const message = messageField ? messageField.value.trim() : "";
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    let firstInvalid = null;
+    let errorMessage = "";
+
+    const nameValid = name.length >= 2;
+    markCollabField(nameField, nameValid);
+    if (!nameValid && !firstInvalid) {
+      firstInvalid = nameField;
+      errorMessage = "Mohon isi nama Anda (minimal 2 huruf).";
+    }
+
+    const emailValid = emailPattern.test(email);
+    markCollabField(emailField, emailValid);
+    if (!emailValid && !firstInvalid) {
+      firstInvalid = emailField;
+      errorMessage = "Mohon isi alamat email yang valid.";
+    }
+
+    const topicValid = Boolean(topic);
+    markCollabField(topicField, topicValid);
+    if (!topicValid && !firstInvalid) {
+      firstInvalid = topicField;
+      errorMessage = "Mohon pilih jenis kebutuhan Anda.";
+    }
+
+    const messageValid = message.length >= 10;
+    markCollabField(messageField, messageValid);
+    if (!messageValid && !firstInvalid) {
+      firstInvalid = messageField;
+      errorMessage = "Mohon ceritakan kebutuhan Anda (minimal 10 huruf).";
+    }
+
+    if (firstInvalid) {
+      showCollabError(errorMessage);
+      firstInvalid.focus();
+      return;
+    }
+
+    const subject = `[Kolaborasi - ${topic}] ${name}`;
+    const body = [
+      `Nama: ${name}`,
+      `Email: ${email}`,
+      `Jenis kebutuhan: ${topic}`,
+      "",
+      message,
+    ].join("\n");
+    const mailtoUrl = `mailto:${collabTargetEmail}?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoUrl;
+  });
+
+  collabForm.addEventListener("input", (event) => {
+    if (event.target instanceof Element && event.target.matches("input, select, textarea")) {
+      markCollabField(event.target, true);
+      showCollabError("");
+    }
+  });
+}
+
 const themeToggle = document.querySelector("[data-theme-toggle]");
 const documentRoot = document.documentElement;
 const themeColorMeta = document.querySelector('meta[name="theme-color"]');

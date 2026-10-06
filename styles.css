@@ -552,6 +552,68 @@ h2 { margin-bottom: 0; color: var(--heading); font-size: clamp(36px, 5vw, 62px);
 .contact-card h2 span { color: var(--accent); }
 .contact-bottom { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-top: 35px; }
 .contact-bottom p { max-width: 410px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+
+/* ————— Formulir kolaborasi via email ————— */
+.collab-form {
+  display: grid;
+  gap: 16px;
+  max-width: 720px;
+  margin-top: 34px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--contact-surface);
+  text-align: left;
+}
+.collab-title { margin: 0; color: var(--text-soft); font-size: 14px; }
+.collab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.collab-field { display: grid; gap: 8px; }
+.collab-field > span { color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.collab-field input,
+.collab-field select,
+.collab-field textarea {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--page);
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.collab-field select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position: calc(100% - 22px) 50%, calc(100% - 16px) 50%;
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.collab-field select:invalid { color: var(--muted); }
+.collab-field textarea { min-height: 112px; resize: vertical; }
+.collab-field input::placeholder,
+.collab-field textarea::placeholder { color: var(--muted); opacity: .8; }
+.collab-field input:focus-visible,
+.collab-field select:focus-visible,
+.collab-field textarea:focus-visible {
+  border-color: rgba(255,173,0,.75);
+  box-shadow: 0 0 0 1px rgba(255,173,0,.25), 0 0 18px rgba(255,173,0,.18);
+  outline: none;
+}
+.collab-field input[aria-invalid="true"],
+.collab-field select[aria-invalid="true"],
+.collab-field textarea[aria-invalid="true"] { border-color: #e0655f; }
+.collab-error { margin: 0; color: #e0655f; font-size: 13px; }
+.collab-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+.collab-submit { border: 0; cursor: pointer; }
+.collab-direct { color: var(--muted); font-size: 13px; text-decoration: underline; text-underline-offset: 3px; }
+.collab-direct:hover { color: var(--accent); }
+
+@media (max-width: 700px) {
+  .collab-form { margin-top: 26px; padding: 20px 18px; }
+  .collab-grid { grid-template-columns: 1fr; }
+}
 .site-footer { padding-bottom: 25px; background: var(--footer-surface); }
 .footer-main { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 22px 0; border-top: 1px solid var(--line); }
 .footer-brand { display: inline-flex; align-items: center; gap: 9px; }
