@@ -1,7 +1,10 @@
-# YEP.studio
+# KENZ.STUDIO
 
-Landing page statis YEP.studio untuk layanan website, sistem bisnis, dan produk
+Landing page statis KENZ.STUDIO untuk layanan website, sistem bisnis, dan produk
 digital.
+
+CSS global berada di `styles.css`; gaya tombol dan navigasi dipisah di
+`css/components/buttons.css` dan `css/components/menu.css`.
 
 ## Menjalankan secara lokal
 
@@ -37,4 +40,12 @@ setiap kali ada push ke branch `main`. Sebelum workflow dijalankan:
 3. Tambahkan repository secrets `CLOUDFLARE_API_TOKEN` dan
    `CLOUDFLARE_ACCOUNT_ID` di **Settings → Secrets and variables → Actions**.
 
-Deploy juga bisa dijalankan manual dari tab **Actions** di GitHub.
+Untuk menghubungkan domain khusus `kenz.studio`, tambahkan domain tersebut pada
+project Cloudflare Pages melalui **Custom domains → Set up a custom domain**.
+Domain harus sudah ditambahkan ke akun Cloudflare. Tambahkan juga `www.kenz.studio`
+jika varian `www` ingin digunakan. Jangan ubah nama project Pages `yep-studio-landing`
+tanpa memperbarui konfigurasi workflow di `.github/workflows/deploy-cloudflare.yml`.
+
+Deploy juga bisa dijalankan manual dari tab **Actions** di GitHub. Pengaturan
+domain khusus dilakukan di dashboard Cloudflare; workflow hanya mengirim file
+situs ke project Pages.

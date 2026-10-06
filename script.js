@@ -4,7 +4,7 @@ const scrollProgress = document.querySelector(".scroll-progress");
 const pageBackdrop = document.querySelector(".page-backdrop");
 const whatsappNumber = "6281283973788";
 const whatsappMessage =
-  "Halo YEP.studio, saya ingin berdiskusi tentang proyek digital.";
+  "Halo KENZ.STUDIO, saya ingin berdiskusi tentang proyek digital.";
 const whatsappUrl = new URL(`https://wa.me/${whatsappNumber}`);
 whatsappUrl.searchParams.set("text", whatsappMessage);
 

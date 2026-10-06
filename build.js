@@ -7,6 +7,8 @@ const files = [
   "index.html",
   "404.html",
   "styles.css",
+  "css/components/menu.css",
+  "css/components/buttons.css",
   "script.js",
   "logo-icon.png",
   "logo-lockup.png",
@@ -17,7 +19,9 @@ fs.rmSync(output, { recursive: true, force: true });
 fs.mkdirSync(output, { recursive: true });
 
 for (const file of files) {
-  fs.copyFileSync(path.join(root, file), path.join(output, file));
+  const destination = path.join(output, file);
+  fs.mkdirSync(path.dirname(destination), { recursive: true });
+  fs.copyFileSync(path.join(root, file), destination);
 }
 
 console.log(`Built ${files.length} static files into dist/.`);

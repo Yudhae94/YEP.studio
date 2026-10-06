@@ -9,6 +9,8 @@ const files = new Map([
   ["/index.html", "index.html"],
   ["/404.html", "404.html"],
   ["/styles.css", "styles.css"],
+  ["/css/components/menu.css", "css/components/menu.css"],
+  ["/css/components/buttons.css", "css/components/buttons.css"],
   ["/script.js", "script.js"],
   ["/logo-icon.png", "logo-icon.png"],
   ["/logo-lockup.png", "logo-lockup.png"],
@@ -79,5 +81,5 @@ const server = http.createServer((request, response) => {
 });
 
 server.listen(port, host, () => {
-  console.log(`YEP.studio is available at http://localhost:${port}`);
+  console.log(`KENZ.STUDIO is available at http://localhost:${port}`);
 });
