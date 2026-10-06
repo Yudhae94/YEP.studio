@@ -17,37 +17,31 @@ npm start
 Buka [http://localhost:5500](http://localhost:5500). Untuk memilih port lain,
 atur variabel lingkungan `PORT` sebelum menjalankan server.
 
-## Build dan preview Cloudflare Pages
+## Build dan preview Cloudflare Workers
 
-Build hanya menyalin file publik yang diperlukan ke `dist/`; file konfigurasi
-dan metadata lokal tidak ikut dipublikasikan.
+Build menyalin file publik ke `dist/`, yang dikonfigurasi sebagai static assets
+di `wrangler.jsonc`.
 
 ```sh
 npm run build
 npm run dev:cloudflare
 ```
 
-Perintah preview Cloudflare memerlukan koneksi internet saat Wrangler pertama
-kali diunduh dengan `npx`. Buka alamat lokal yang ditampilkan Wrangler.
+Perintah preview memerlukan koneksi internet saat Wrangler pertama kali
+diunduh dengan `npx`. Buka alamat lokal yang ditampilkan Wrangler.
 
-## Deploy dari GitHub ke Cloudflare Pages
+## Deploy dari GitHub ke Cloudflare Workers
 
-Workflow `.github/workflows/deploy-cloudflare.yml` membangun dan men-deploy situs
-setiap kali ada push ke branch `main`. Sebelum workflow dijalankan:
+Hubungkan repository GitHub ke project Cloudflare Worker `kenz-studio` melalui
+Workers Builds. Atur build command `npm run build` dan deploy command
+`npx wrangler deploy`. Wrangler membaca folder asset `dist/` dari `wrangler.jsonc`;
+push ke branch `main` akan memulai build dan deploy otomatis.
 
-1. Buat project Cloudflare Pages bernama `kenz-studio`. Alamat Pages bawaannya
-   akan menjadi `kenz-studio.pages.dev`.
-2. Buat Cloudflare API token dengan izin deploy Pages.
-3. Tambahkan repository secrets `CLOUDFLARE_API_TOKEN` dan
-   `CLOUDFLARE_ACCOUNT_ID` di **Settings → Secrets and variables → Actions**.
+Jika menggunakan GitHub Actions untuk deploy selain integrasi Workers Builds,
+gunakan Cloudflare API token dan Account ID sebagai repository secrets.
 
 Untuk menghubungkan domain khusus `kenz.studio`, tambahkan domain tersebut pada
-project Cloudflare Pages melalui **Custom domains → Set up a custom domain**.
+project Worker melalui **Settings → Domains & Routes**.
 Domain harus sudah ditambahkan dan aktif di akun Cloudflare. Tambahkan juga
-`www.kenz.studio` jika varian `www` ingin digunakan. Workflow mengirim build ke
-project Pages `kenz-studio`; domain khusus diatur terpisah melalui dashboard
-Cloudflare.
-
-Deploy juga bisa dijalankan manual dari tab **Actions** di GitHub. Pengaturan
-domain khusus dilakukan di dashboard Cloudflare; workflow hanya mengirim file
-situs ke project Pages.
+`www.kenz.studio` jika varian `www` ingin digunakan. Domain khusus diatur
+terpisah dari alamat Worker `kenz-studio.<subdomain>.workers.dev`.

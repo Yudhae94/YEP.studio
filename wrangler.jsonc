@@ -1,5 +1,7 @@
 {
   "name": "kenz-studio",
-  "compatibility_date": "2026-10-05",
-  "pages_build_output_dir": "./dist"
+  "compatibility_date": "2026-10-06",
+  "assets": {
+    "directory": "./dist"
+  }
 }
