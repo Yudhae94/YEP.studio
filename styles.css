@@ -40,9 +40,9 @@
   --heading: #191a14;
   --heading-strong: #101108;
   --text-soft: rgba(20, 21, 16, .88);
-  --text-faint: rgba(20, 21, 16, .72);
+  --text-faint: rgba(20, 21, 16, .8);
   --text-dim: #6b6c63;
-  --accent: #4f6d00;
+  --accent: #3e5600;
   --glass: rgba(255, 255, 255, .72);
   --glass-strong: rgba(255, 255, 255, .84);
   --nav-surface: rgba(255, 255, 255, .97);
@@ -71,6 +71,54 @@
 }
 
 [data-theme="light"] .page-backdrop::after { opacity: .1; }
+
+/* ————— Keterbacaan mode terang ————— */
+
+/* Kartu visual proyek tetap gelap, jadi teks gradien di dalamnya
+   memakai gradien terang (heading halaman tetap gelap). */
+[data-theme="light"] .project-visual {
+  --flow-grad: linear-gradient(100deg, #b77cff 5%, #46c7ff 35%, #e9f8ff 55%, #42cfff 75%, #c184ff 95%);
+}
+
+/* Kuning/amber digelapkan agar terbaca di latar terang. */
+[data-theme="light"] .menu-pill i { background: #c28700; }
+[data-theme="light"] .brand-copy small,
+[data-theme="light"] .footer-brand-copy small { color: #b37400; }
+[data-theme="light"] .calendar-mark,
+[data-theme="light"] .button-primary span,
+[data-theme="light"] .button-secondary span { color: #b45309; }
+[data-theme="light"] .hero-ring { border-color: rgba(180, 83, 9, .4); }
+
+/* Fokus keyboard harus kontras di latar terang. */
+[data-theme="light"] a:focus-visible,
+[data-theme="light"] button:focus-visible {
+  outline-color: #1d4ed8;
+}
+
+/* Section “band” dibuat lebih solid agar teks di atas paving terang. */
+[data-theme="light"] .services { background: rgba(255, 255, 255, .82); }
+[data-theme="light"] .projects { background: rgba(250, 249, 244, .9); }
+[data-theme="light"] .about,
+[data-theme="light"] .contact { background: rgba(255, 255, 255, .78); }
+[data-theme="light"] .site-footer { background: rgba(255, 255, 255, .9); }
+
+/* Teks halus di permukaan kartu dibuat lebih gelap. */
+[data-theme="light"] .floating-label,
+[data-theme="light"] .float-close,
+[data-theme="light"] .floating-meta { color: #4f5049; }
+[data-theme="light"] .social-links a { color: #4f5049; }
+
+/* Hover aksen di latar terang: isi gelap + halo tipis. */
+[data-theme="light"] .card-link:hover span { color: #2c3f00; }
+[data-theme="light"] .project-card > a:hover .project-arrow {
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 8px 22px rgba(62, 86, 0, .35);
+}
+[data-theme="light"] .social-links a:hover,
+[data-theme="light"] .social-links .whatsapp-button:hover {
+  background: rgba(62, 86, 0, .08);
+}
 
 * { box-sizing: border-box; }
 
