@@ -35,16 +35,18 @@ kali diunduh dengan `npx`. Buka alamat lokal yang ditampilkan Wrangler.
 Workflow `.github/workflows/deploy-cloudflare.yml` membangun dan men-deploy situs
 setiap kali ada push ke branch `main`. Sebelum workflow dijalankan:
 
-1. Buat project Cloudflare Pages bernama `yep-studio-landing`.
+1. Gunakan project Cloudflare Pages bernama `yep-studio`, sesuai dengan alamat
+   `yep-studio.pages.dev`.
 2. Buat Cloudflare API token dengan izin deploy Pages.
 3. Tambahkan repository secrets `CLOUDFLARE_API_TOKEN` dan
    `CLOUDFLARE_ACCOUNT_ID` di **Settings → Secrets and variables → Actions**.
 
 Untuk menghubungkan domain khusus `kenz.studio`, tambahkan domain tersebut pada
 project Cloudflare Pages melalui **Custom domains → Set up a custom domain**.
-Domain harus sudah ditambahkan ke akun Cloudflare. Tambahkan juga `www.kenz.studio`
-jika varian `www` ingin digunakan. Jangan ubah nama project Pages `yep-studio-landing`
-tanpa memperbarui konfigurasi workflow di `.github/workflows/deploy-cloudflare.yml`.
+Domain harus sudah ditambahkan dan aktif di akun Cloudflare. Tambahkan juga
+`www.kenz.studio` jika varian `www` ingin digunakan. Project Pages tetap bernama
+`yep-studio`; workflow mengirim build ke project tersebut dan domain khusus
+diatur terpisah melalui dashboard Cloudflare.
 
 Deploy juga bisa dijalankan manual dari tab **Actions** di GitHub. Pengaturan
 domain khusus dilakukan di dashboard Cloudflare; workflow hanya mengirim file
