@@ -144,7 +144,8 @@ h3, strong, b {
   min-height: min(900px, 100svh);
   min-height: max(720px, min(900px, 100svh));
   align-items: center;
-  overflow: hidden;
+  overflow: clip visible;
+  padding-block: clamp(120px, 14vh, 160px) clamp(48px, 7vh, 84px);
 }
 .paving-lines { display: none; }
 
@@ -242,23 +243,25 @@ h3, strong, b {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: .12em;
+  gap: .18em;
   max-width: 1050px;
   margin: 0 auto 22px;
-  padding: .08em 0 .16em;
+  padding: .06em .1em .22em;
   overflow: visible;
   color: #fff;
   background: none;
-  font-size: clamp(54px, 7.5vw, 104px);
+  font-size: clamp(48px, 6.5vw, 96px);
   font-weight: 700;
-  letter-spacing: -.06em;
-  line-height: 1.18;
+  letter-spacing: -.04em;
+  line-height: 1.24;
   text-wrap: balance;
   text-shadow: 0 4px 25px rgba(0,0,0,.18);
+  overflow-wrap: break-word;
 }
 .headline-line {
   display: inline-block;
-  line-height: 1.18;
+  max-width: 100%;
+  line-height: 1.24;
   color: transparent !important;
   background-image: linear-gradient(100deg, #b77cff 5%, #46c7ff 35%, #e9f8ff 55%, #42cfff 75%, #c184ff 95%);
   background-size: 220% 100%;
@@ -268,8 +271,9 @@ h3, strong, b {
 }
 .headline-highlight {
   display: inline-block;
-  padding: 0;
-  line-height: 1.12;
+  max-width: 100%;
+  padding: 0 .06em .08em;
+  line-height: 1.2;
   color: transparent !important;
   background-image: linear-gradient(100deg, #b77cff 5%, #46c7ff 35%, #e9f8ff 55%, #42cfff 75%, #c184ff 95%);
   background-size: 220% 100%;
@@ -618,7 +622,7 @@ h2 { margin-bottom: 0; color: #f5f5f0; font-size: clamp(36px, 5vw, 62px); font-w
   .brand-mark { width: 37px; height: 45px; }
   .brand-copy strong { font-size: 13px; letter-spacing: 1.5px; }
   .brand-copy small { font-size: 8px; letter-spacing: 2.8px; }
-  .hero { min-height: max(720px, 100svh); }
+  .hero { min-height: max(720px, 100svh); padding-top: 110px; }
   .page-backdrop { background-size: auto, auto, 100% 100%; }
   .walker-one { left: 8%; }
   .walker-two { top: 38%; left: 15%; }
@@ -632,7 +636,7 @@ h2 { margin-bottom: 0; color: #f5f5f0; font-size: clamp(36px, 5vw, 62px); font-w
   .hero-content { width: calc(100% - 36px); margin-top: 24px; }
   .hero-kicker { min-height: 35px; margin-bottom: 28px; padding-inline: 13px; font-size: 10px; }
   .hero-overline { margin-bottom: 12px; font-size: 9px; letter-spacing: 1.6px; }
-  .hero h1 { margin-bottom: 19px; font-size: clamp(48px, 11vw, 70px); letter-spacing: -.075em; line-height: 1.01; }
+  .hero h1 { margin-bottom: 19px; padding-bottom: .22em; font-size: clamp(42px, 10.5vw, 64px); letter-spacing: -.04em; line-height: 1.22; }
   .hero-description { max-width: 430px; margin: 20px auto 23px; font-size: 14px; line-height: 1.65; }
   .hero-bottom-note { gap: 9px; margin-top: 48px; font-size: 8px; letter-spacing: .7px; }
   .note-rule { width: 25px; }
@@ -696,7 +700,7 @@ h2 { margin-bottom: 0; color: #f5f5f0; font-size: clamp(36px, 5vw, 62px); font-w
 }
 
 @media (max-width: 360px) {
-  .hero h1 { font-size: 44px; }
+  .hero h1 { font-size: 40px; line-height: 1.24; }
   .hero-bottom-note { font-size: 7px; }
   .principles { grid-template-columns: 1fr; }
 }
