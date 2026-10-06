@@ -17,6 +17,28 @@ npm start
 Buka [http://localhost:5500](http://localhost:5500). Untuk memilih port lain,
 atur variabel lingkungan `PORT` sebelum menjalankan server.
 
+## Deploy otomatis ke Cloudflare Pages
+
+Project Pages **`kenz-studio`** sudah live di
+**https://kenz-studio.pages.dev**.
+
+Setiap push ke branch `main` menjalankan workflow
+`.github/workflows/deploy-pages.yml`:
+
+1. `npm run build` menghasilkan folder `dist/`.
+2. `wrangler pages deploy dist --project-name=kenz-studio` menerbitkan
+   hasilnya sebagai deployment production.
+
+Workflow membutuhkan repository secrets
+`CLOUDFLARE_API_TOKEN` (izin Pages + Workers) dan
+`CLOUDFLARE_ACCOUNT_ID`.
+
+Deploy manual dari komputer lokal:
+
+```sh
+npm run deploy:pages
+```
+
 ## Build dan preview Cloudflare Workers
 
 Build menyalin file publik ke `dist/`, yang dikonfigurasi sebagai static assets
