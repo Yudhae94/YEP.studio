@@ -572,16 +572,14 @@ h2 { margin-bottom: 0; color: var(--heading); font-size: clamp(36px, 5vw, 62px);
 }
 .social-links a:hover { border-color: var(--accent); background: rgba(212,255,54,.08); color: var(--accent); }
 .social-links .social-off {
-  display: grid;
-  width: 36px;
-  height: 36px;
-  place-items: center;
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  color: var(--muted);
   opacity: .45;
-  cursor: not-allowed;
-  user-select: none;
+  cursor: pointer;
+}
+.social-links a.social-off:hover {
+  border-color: var(--accent);
+  background: rgba(212,255,54,.08);
+  color: var(--accent);
+  opacity: .85;
 }
 .social-links .social-off svg { width: 17px; height: 17px; fill: currentColor; }
 .social-links .social-off .social-dot { fill: currentColor; stroke: none; }
