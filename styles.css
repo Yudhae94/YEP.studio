@@ -672,10 +672,148 @@ h2 { margin-bottom: 0; color: var(--heading); font-size: clamp(36px, 5vw, 62px);
   width: min(72%, 850px);
   animation: not-found-arrive .8s .1s both;
 }
-.not-found-art svg { display: block; width: 100%; height: auto; overflow: visible; }
-.not-found-orbit { position: absolute; z-index: -1; border: 1px solid rgba(212,255,54,.72); border-radius: 50%; }
-.not-found-orbit-one { top: 23%; right: 17%; width: 90px; height: 90px; }
-.not-found-orbit-two { top: 17%; right: 14%; width: 150px; height: 150px; opacity: .5; }
+
+/* ————— Animasi “lonely 404” buatan sendiri ————— */
+.lonely-stage {
+  display: grid;
+  justify-items: center;
+  width: 100%;
+  padding: 12px 0 6px;
+}
+.lonely-number {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  margin: 0;
+  color: #9aa1a6;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(150px, 34vw, 330px);
+  font-weight: 800;
+  letter-spacing: -.08em;
+  line-height: .82;
+  animation: lonely-breathe 3.6s ease-in-out infinite;
+}
+.lonely-number > span:first-child { transform: skewX(-4deg); }
+.lonely-number > span:last-child { transform: skewX(4deg); }
+.lonely-zero { position: relative; display: inline-block; }
+.lonely-paper {
+  position: absolute;
+  left: 50%;
+  bottom: 62%;
+  width: .42em;
+  height: .52em;
+  background: linear-gradient(180deg, #ffffff 0%, #eef0f1 100%);
+  border: .022em solid #8b9095;
+  border-radius: .02em .02em .05em .05em;
+  transform: translateX(-50%);
+  transform-origin: 50% 90%;
+  animation: lonely-sway 3.6s ease-in-out infinite;
+  box-shadow: 0 .03em 0 rgba(70, 76, 80, .25);
+}
+.lonely-fold {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: .1em;
+  height: .1em;
+  background: #dfe3e5;
+  border-left: .022em solid #8b9095;
+  border-bottom: .022em solid #8b9095;
+  border-radius: 0 0 0 .03em;
+}
+.lonely-eye {
+  position: absolute;
+  top: .13em;
+  width: .028em;
+  height: .042em;
+  border-radius: 50%;
+  background: #5b6065;
+  animation: lonely-blink 4.2s ease-in-out infinite;
+}
+.lonely-eye-left { left: .11em; }
+.lonely-eye-right { right: .11em; }
+.lonely-brow {
+  position: absolute;
+  top: .085em;
+  width: .07em;
+  height: .016em;
+  border-radius: .01em;
+  background: #5b6065;
+}
+.lonely-brow-left { left: .075em; transform: rotate(12deg); }
+.lonely-brow-right { right: .075em; transform: rotate(-12deg); }
+.lonely-mouth {
+  position: absolute;
+  top: .21em;
+  left: 50%;
+  width: .09em;
+  height: .045em;
+  border: .016em solid #5b6065;
+  border-top: 0;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  border-radius: 0 0 .06em .06em;
+  transform: translateX(-50%) rotate(180deg);
+}
+.lonely-arm {
+  position: absolute;
+  top: .17em;
+  width: .05em;
+  height: .2em;
+  border: .014em solid #5b6065;
+  border-top: 0;
+  border-bottom: 0;
+}
+.lonely-arm-left { left: -.045em; border-right: 0; border-radius: .03em 0 0 .05em; transform: rotate(6deg); transform-origin: top right; animation: lonely-arm-left 3.6s ease-in-out infinite; }
+.lonely-arm-right { right: -.045em; border-left: 0; border-radius: 0 .03em .05em 0; transform: rotate(-6deg); transform-origin: top left; animation: lonely-arm-right 3.6s ease-in-out infinite; }
+.lonely-leg {
+  position: absolute;
+  bottom: -.09em;
+  width: .05em;
+  height: .1em;
+  background: #5b6065;
+  border-radius: 0 0 .015em .015em;
+  animation: lonely-kick 3.6s ease-in-out infinite;
+}
+.lonely-leg-left { left: .09em; }
+.lonely-leg-right { right: .09em; animation-delay: -.45s; }
+.lonely-ground {
+  width: min(78%, 480px);
+  height: 12px;
+  margin-top: 14px;
+  border-radius: 50%;
+  background: rgba(70, 76, 80, .22);
+  animation: lonely-shadow 3.6s ease-in-out infinite;
+}
+
+@keyframes lonely-breathe {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+@keyframes lonely-sway {
+  0%, 100% { transform: translateX(-50%) rotate(-3deg); }
+  50% { transform: translateX(-50%) rotate(3deg); }
+}
+@keyframes lonely-blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(.08); }
+}
+@keyframes lonely-arm-left {
+  0%, 100% { transform: rotate(10deg); }
+  50% { transform: rotate(2deg); }
+}
+@keyframes lonely-arm-right {
+  0%, 100% { transform: rotate(-10deg); }
+  50% { transform: rotate(-2deg); }
+}
+@keyframes lonely-kick {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes lonely-shadow {
+  0%, 100% { transform: scaleX(1); opacity: .9; }
+  50% { transform: scaleX(.86); opacity: .55; }
+}
 .not-found-foot { margin: 0; color: #355766; font-size: 11px; font-weight: 600; letter-spacing: .5px; }
 .not-found-foot span { margin: 0 5px; color: #834abb; }
 
@@ -835,6 +973,10 @@ h2 { margin-bottom: 0; color: var(--heading); font-size: clamp(36px, 5vw, 62px);
   .motion-ready .reveal { opacity: 1; transform: none; }
   .page-backdrop { will-change: auto; }
   .not-found-art { animation: none; }
+  .lonely-number, .lonely-paper, .lonely-eye, .lonely-arm-left,
+  .lonely-arm-right, .lonely-leg-left, .lonely-leg-right, .lonely-ground {
+    animation: none;
+  }
   .brand-color-flow {
     color: var(--accent) !important;
     background: none;
