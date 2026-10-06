@@ -559,7 +559,7 @@ h2 { margin-bottom: 0; color: var(--heading); font-size: clamp(36px, 5vw, 62px);
 .tech-stack-title { margin: 0 0 22px; color: var(--text-soft); font-size: 12px; font-weight: 600; letter-spacing: 1.4px; text-transform: uppercase; }
 .tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px 14px; margin: 0; padding: 0; list-style: none; }
 .tech-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
-.tech-logo { position: relative; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 12px; font-weight: 800; font-size: 16px; letter-spacing: .5px; }
+.tech-logo { position: relative; display: grid; place-items: center; min-width: 46px; height: 46px; padding: 0 8px; box-sizing: border-box; border-radius: 12px; font-weight: 800; font-size: 13px; letter-spacing: .5px; }
 .tech-name { color: var(--muted); font-size: 10px; font-weight: 600; letter-spacing: .4px; text-align: center; }
 .tech-transparent {
   background: transparent;
