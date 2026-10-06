@@ -87,3 +87,59 @@ if (menuButton && siteNav) {
     }
   });
 }
+
+const themeToggle = document.querySelector("[data-theme-toggle]");
+const documentRoot = document.documentElement;
+const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+
+const getActiveTheme = () =>
+  documentRoot.dataset.theme === "light" ? "light" : "dark";
+
+const syncThemeToggle = () => {
+  const theme = getActiveTheme();
+
+  if (themeToggle) {
+    themeToggle.setAttribute(
+      "aria-label",
+      theme === "dark" ? "Aktifkan mode terang" : "Aktifkan mode gelap",
+    );
+    themeToggle.setAttribute("aria-pressed", String(theme === "light"));
+    themeToggle.setAttribute(
+      "title",
+      theme === "dark" ? "Ganti ke mode terang" : "Ganti ke mode gelap",
+    );
+  }
+
+  if (themeColorMeta) {
+    themeColorMeta.setAttribute(
+      "content",
+      theme === "dark" ? "#111210" : "#f3f2ec",
+    );
+  }
+};
+
+syncThemeToggle();
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const nextTheme = getActiveTheme() === "dark" ? "light" : "dark";
+
+    if (!prefersReducedMotion.matches) {
+      documentRoot.classList.add("theme-transition");
+      window.setTimeout(() => {
+        documentRoot.classList.remove("theme-transition");
+      }, 550);
+    }
+
+    documentRoot.dataset.theme = nextTheme;
+
+    try {
+      window.localStorage.setItem("kenz-theme", nextTheme);
+    } catch (error) {
+      /* Penyimpanan tidak tersedia (mode privat), tema tetap diterapkan sesi ini. */
+    }
+
+    syncThemeToggle();
+  });
+}
+

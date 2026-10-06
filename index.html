@@ -17,6 +17,22 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("kenz-theme");
+          var theme =
+            stored === "light" || stored === "dark"
+              ? stored
+              : window.matchMedia("(prefers-color-scheme: light)").matches
+                ? "light"
+                : "dark";
+          document.documentElement.dataset.theme = theme;
+        } catch (error) {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/css/components/menu.css" />
     <link rel="stylesheet" href="/css/components/buttons.css" />
@@ -49,6 +65,32 @@
           Mari berkolaborasi
           <span class="calendar-mark" aria-hidden="true">↗</span>
         </a>
+        <button
+          class="theme-toggle"
+          type="button"
+          data-theme-toggle
+          aria-label="Aktifkan mode terang"
+          aria-pressed="false"
+          title="Ganti mode terang/gelap"
+        >
+          <svg
+            class="theme-icon theme-icon-sun"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="4.4"></circle>
+            <path
+              d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M18.7 5.3 17 7M7 17l-1.7 1.7"
+            ></path>
+          </svg>
+          <svg
+            class="theme-icon theme-icon-moon"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M20.2 14.3A8.6 8.6 0 0 1 9.7 3.8a.7.7 0 0 0-.9-.9 10.2 10.2 0 1 0 12.3 12.3.7.7 0 0 0-.9-.9Z"></path>
+          </svg>
+        </button>
         <nav class="site-nav" id="site-nav" aria-label="Navigasi utama">
           <a href="#about">Tentang</a>
           <a href="#services">Layanan</a>

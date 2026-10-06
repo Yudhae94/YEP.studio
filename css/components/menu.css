@@ -10,10 +10,10 @@
   align-items: center;
   gap: 14px;
   padding: 0 21px;
-  border: 1px solid rgba(255,255,255,.14);
+  border: 1px solid var(--line);
   border-radius: 30px;
-  background: rgba(18,19,17,.78);
-  color: white;
+  background: var(--glass-strong);
+  color: var(--ink);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: .6px;
@@ -44,7 +44,7 @@
   padding: 8px;
   border: 1px solid var(--line);
   border-radius: 13px;
-  background: rgba(20,21,18,.97);
+  background: var(--nav-surface);
   opacity: 0;
   pointer-events: none;
   transform: translateY(-6px);
@@ -57,7 +57,7 @@
 .site-nav a {
   padding: 12px;
   border-radius: 7px;
-  color: #eee;
+  color: var(--nav-link);
   font-size: 13px;
   box-shadow: inset 0 0 0 1px transparent;
   transition: background-color .18s ease, box-shadow .18s ease, color .18s ease;
@@ -83,9 +83,9 @@
     justify-items: center;
     gap: 5px;
     padding: 0;
-    border: 1px solid rgba(255,255,255,.18);
+    border: 1px solid var(--line);
     border-radius: 50%;
-    background: rgba(18,19,17,.78);
+    background: var(--glass-strong);
     cursor: pointer;
     backdrop-filter: blur(12px);
   }
