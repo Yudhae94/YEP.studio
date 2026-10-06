@@ -390,8 +390,10 @@
         <div class="container contact-card reveal">
           <p class="eyebrow">04 / Punya tantangan digital?</p>
           <h2>Mari wujudkan<br /><span>solusi yang lebih baik.</span></h2>
-          <form class="collab-form" data-collab-form novalidate>
+          <div class="contact-layout">
+          <form class="collab-form" data-collab-form novalidate data-access-key="54febec7-42b3-4870-ac29-473d9cbdac7a">
             <p class="collab-title">Ceritakan kebutuhan Anda — langsung terkirim ke email kami.</p>
+            <input type="checkbox" name="botcheck" class="collab-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <div class="collab-grid">
               <label class="collab-field">
                 <span>Nama Anda</span>
@@ -417,15 +419,27 @@
               <textarea name="message" rows="4" placeholder="Contoh: Saya butuh website profil perusahaan untuk…" required maxlength="2000"></textarea>
             </label>
             <p class="collab-error" data-collab-error role="alert" hidden></p>
+            <p class="collab-status" data-collab-status role="status" hidden></p>
             <div class="collab-actions">
               <button class="button button-primary collab-submit" type="submit">
                 Kirim via Email <span aria-hidden="true">↗</span>
               </button>
-              <a class="collab-direct" href="mailto:kenz.studio23@gmail.com?subject=Kolaborasi%20dengan%20KENZ.STUDIO">
-                atau tulis langsung ke kenz.studio23@gmail.com
-              </a>
             </div>
           </form>
+          <aside class="tech-stack" aria-label="Teknologi yang kami gunakan">
+            <p class="tech-stack-title">Bekerja dengan berbagai teknologi</p>
+            <ul class="tech-grid">
+              <li class="tech-item"><span class="tech-logo tech-transparent" aria-hidden="true">C</span><span class="tech-name">CSS</span></li>
+              <li class="tech-item"><span class="tech-logo tech-transparent" aria-hidden="true">B</span><span class="tech-name">Batchfile</span></li>
+              <li class="tech-item"><span class="tech-logo tech-transparent" aria-hidden="true">H</span><span class="tech-name">HTML</span></li>
+              <li class="tech-item"><span class="tech-logo tech-transparent" aria-hidden="true">JS</span><span class="tech-name">JavaScript</span></li>
+              <li class="tech-item"><span class="tech-logo tech-transparent" aria-hidden="true">PY</span><span class="tech-name">Python</span></li>
+              <li class="tech-item"><span class="tech-logo tech-transparent" aria-hidden="true">L</span><span class="tech-name">Laravel</span></li>
+              <li class="tech-item"><span class="tech-logo tech-transparent" aria-hidden="true">PHP</span><span class="tech-name">PHP</span></li>
+              <li class="tech-item"><span class="tech-logo tech-transparent" aria-hidden="true">SB</span><span class="tech-name">Springboot</span></li>
+            </ul>
+          </aside>
+          </div>
           <div class="contact-bottom">
             <p>Ceritakan apa yang ingin Anda bangun. Kami siap membantu menemukan jalan terbaik.</p>
           </div>
@@ -478,11 +492,11 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.1 8.4a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM3.4 10h3.4v10.6H3.4V10Zm5.5 0h3.3v1.5h.1a3.6 3.6 0 0 1 3.2-1.8c3.4 0 4 2.2 4 5v5.9h-3.4v-5.2c0-1.2 0-2.7-1.7-2.7s-2 1.3-2 2.6v5.3H8.9V10Z"></path></svg>
           </a>
           <a
-            class="whatsapp-button"
-            href="#contact"
+            class="whatsapp-button social-off"
+            href="/404.html"
             data-whatsapp-link
-            aria-label="Hubungi KENZ.STUDIO melalui WhatsApp"
-            title="WhatsApp"
+            aria-label="WhatsApp (tidak tersedia)"
+            title="WhatsApp (tidak tersedia)"
           >
             <svg class="whatsapp-logo" viewBox="0 0 48 48" aria-hidden="true">
               <path class="whatsapp-bubble" d="M24 5.5a18 18 0 0 0-15.4 27.3L6.2 43l10-2.5A18 18 0 1 0 24 5.5Z"></path>
