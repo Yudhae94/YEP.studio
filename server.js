@@ -12,6 +12,7 @@ const files = new Map([
   ["/css/components/menu.css", "css/components/menu.css"],
   ["/css/components/buttons.css", "css/components/buttons.css"],
   ["/script.js", "script.js"],
+  ["/theme-init.js", "theme-init.js"],
   ["/logo-icon.png", "logo-icon.png"],
   ["/logo-lockup.png", "logo-lockup.png"],
   ["/logo-wordmark.png", "logo-wordmark.png"],

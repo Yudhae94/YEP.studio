@@ -17,22 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <script>
-      (function () {
-        try {
-          var stored = localStorage.getItem("kenz-theme");
-          var theme =
-            stored === "light" || stored === "dark"
-              ? stored
-              : window.matchMedia("(prefers-color-scheme: light)").matches
-                ? "light"
-                : "dark";
-          document.documentElement.dataset.theme = theme;
-        } catch (error) {
-          document.documentElement.dataset.theme = "dark";
-        }
-      })();
-    </script>
+    <script src="/theme-init.js"></script>
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/css/components/menu.css" />
     <link rel="stylesheet" href="/css/components/buttons.css" />
@@ -40,14 +25,10 @@
   </head>
   <body>
     <div class="page-backdrop" aria-hidden="true">
-      <span class="paving-lines"></span>
       <i class="walker walker-one"><b></b></i>
       <i class="walker walker-two"><b></b></i>
       <i class="walker walker-three"><b></b></i>
       <i class="walker walker-four"><b></b></i>
-      <i class="walker walker-five"><b></b></i>
-      <i class="walker walker-six"><b></b></i>
-      <i class="walker walker-seven"><b></b></i>
       <span class="hero-ring hero-ring-one"></span>
       <span class="hero-ring hero-ring-two"></span>
     </div>
@@ -123,7 +104,7 @@
             Karawang, Jawa Barat
           </p>
           <h1>
-            <span class="headline-line headline-first">Teknologi untuk</span>
+            <span class="headline-line">Teknologi untuk</span>
             <span class="headline-highlight">kemajuan Anda.</span>
           </h1>
           <p class="hero-description">
@@ -240,9 +221,6 @@
                     <span>SIPERAN / RINGKASAN</span><span>↗</span>
                   </div>
                   <div class="siperan-preview">
-                    <div class="preview-sidebar">
-                      <b>S.</b><i></i><i></i><i></i>
-                    </div>
                     <div class="preview-content">
                       <small>LAPORAN · DASHBOARD</small>
                       <strong>Laporan &amp; arsip</strong>
@@ -251,7 +229,6 @@
                         <span>Arsip<b>Terstruktur</b></span>
                         <span>Status<b>Terpantau</b></span>
                       </div>
-                      <div class="preview-lines"><i></i><i></i><i></i></div>
                     </div>
                   </div>
                 </div>

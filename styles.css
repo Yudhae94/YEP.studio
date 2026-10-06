@@ -480,7 +480,6 @@ h2 { margin-bottom: 0; color: var(--heading); font-size: clamp(36px, 5vw, 62px);
 .preview-stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
 .preview-stat-row > span { padding: 10px; border: 1px solid #353630; color: #aaa; font-size: 9px; }
 .preview-stat-row b { display: block; margin-top: 6px; color: var(--lime); font-size: 12px; }
-.preview-sidebar { display: none; }
 .network-preview { gap: 22px; background: #171b18; }
 .network-label, .network-footer { display: flex; align-items: center; gap: 9px; color: #c6c6c1; font-size: 8px; }
 .network-label .status-dot { width: 7px; height: 7px; flex-basis: 7px; background: #9ade87; }
@@ -680,8 +679,6 @@ h2 { margin-bottom: 0; color: var(--heading); font-size: clamp(36px, 5vw, 62px);
 .reveal { opacity: 1; transform: none; }
 .motion-ready .reveal { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
 .motion-ready .reveal.is-visible { opacity: 1; transform: none; }
-.reveal--left { transform: translateX(-18px); }
-.reveal--right { transform: translateX(18px); }
 
 @keyframes hero-enter {
   from { opacity: 0; transform: translateY(18px); }

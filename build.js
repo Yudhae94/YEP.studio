@@ -10,6 +10,8 @@ const files = [
   "css/components/menu.css",
   "css/components/buttons.css",
   "script.js",
+  "theme-init.js",
+  "_headers",
   "logo-icon.png",
   "logo-lockup.png",
   "logo-wordmark.png",
