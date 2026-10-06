@@ -41,8 +41,9 @@ npm run deploy:pages
 
 ## Build dan preview Cloudflare Workers
 
-Build menyalin file publik ke `dist/`, yang dikonfigurasi sebagai static assets
-di `wrangler.jsonc`.
+Build menyalin file publik ke `dist/`. Config Worker disimpan di
+`wrangler.worker.jsonc` (dipakai `npm run dev:cloudflare`); deploy Pages
+sengaja tanpa config agar validasi Pages tidak menolak field `assets`.
 
 ```sh
 npm run build
