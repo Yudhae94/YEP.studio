@@ -79,7 +79,7 @@ if (!prefersReducedMotion.matches && "IntersectionObserver" in window) {
         }
       });
     },
-    { threshold: 0.14, rootMargin: "0px 0px -32px 0px" },
+    { threshold: 0.14, rootMargin: "0px 0px 0px 0px" },
   );
 
   document.querySelectorAll(".reveal").forEach((element) => {

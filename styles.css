@@ -1225,7 +1225,6 @@ h2 { margin-bottom: 0; color: var(--heading); font-size: clamp(36px, 5vw, 62px);
   .footer-brand-copy small { font-size: 7px; }
   .back-top { margin-left: auto; font-size: 10px; }
   .footer-bottom { flex-wrap: wrap; font-size: 8px; }
-  .footer-bottom span:last-child { width: 100%; }
 }
 
 @media (max-width: 700px) {
