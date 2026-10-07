@@ -85,8 +85,7 @@
 [data-theme="light"] .brand-copy small,
 [data-theme="light"] .footer-brand-copy small { color: #b37400; }
 [data-theme="light"] .calendar-mark,
-[data-theme="light"] .button-primary span,
-[data-theme="light"] .button-secondary span { color: #b45309; }
+[data-theme="light"] .button-primary span { color: #b45309; }
 [data-theme="light"] .hero-ring { border-color: rgba(180, 83, 9, .4); }
 
 /* Fokus keyboard harus kontras di latar terang. */
@@ -399,9 +398,11 @@ h3, strong, b {
   -webkit-background-clip: text;
   animation: headline-enter .8s .34s both, bold-color-flow 6s ease-in-out infinite alternate;
 }
+/* Tombol hero disembunyikan agar tampilan lebih bersih — CTA tetap tersedia
+   lewat "Mari berkolaborasi" di header dan kartu percakapan mengambang. */
 .hero-description {
   max-width: 670px;
-  margin: 27px auto 30px;
+  margin: 27px auto 0;
   color: var(--text-soft);
   font-size: clamp(15px, 1.6vw, 20px);
   font-weight: 500;
@@ -414,7 +415,7 @@ h3, strong, b {
   align-items: center;
   justify-content: center;
   gap: 13px;
-  margin-top: 74px;
+  margin-top: 58px;
   color: var(--text-faint);
   font-size: 10px;
   font-weight: 600;

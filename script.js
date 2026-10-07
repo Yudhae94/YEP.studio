@@ -7,14 +7,6 @@ const siteNav = document.querySelector("#site-nav");
 const scrollProgress = document.querySelector(".scroll-progress");
 const pageBackdrop = document.querySelector(".page-backdrop");
 
-/* Template pesan otomatis untuk CTA "Konsultasi Proyek via WhatsApp".
-   Isi WHATSAPP_NUMBER dengan format internasional (mis. "6281234567890")
-   untuk mengaktifkan tautan wa.me. Selama kosong, CTA tetap memakai
-   tautan internal (#contact) yang ada di HTML. */
-const WHATSAPP_NUMBER = "";
-const WHATSAPP_MESSAGE =
-  "Halo Kenz Studio, saya tertarik untuk berkonsultasi mengenai pembuatan [Branding / UI/UX / Web / Mobile App] untuk startup saya. Boleh bantu berikan informasi lebih lanjut?";
-
 /* Nomor WhatsApp dinonaktifkan (privasi). Tombol WhatsApp dialihkan ke
    halaman 404 hingga nomor siap ditampilkan kembali. */
 document.querySelectorAll("[data-whatsapp-link]").forEach((link) => {
@@ -22,14 +14,6 @@ document.querySelectorAll("[data-whatsapp-link]").forEach((link) => {
   link.removeAttribute("target");
   link.removeAttribute("rel");
 });
-
-if (WHATSAPP_NUMBER) {
-  document.querySelectorAll("[data-whatsapp-cta]").forEach((link) => {
-    link.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-  });
-}
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 

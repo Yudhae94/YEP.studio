@@ -29,13 +29,6 @@
 
 .header-book:hover .calendar-mark { transform: translate(2px, -2px); }
 
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-}
-
 .button {
   display: inline-flex;
   min-height: 58px;
@@ -60,15 +53,13 @@
   box-shadow: 0 0 0 1px rgba(255,173,0,.2), 0 0 18px rgba(255,173,0,.3);
 }
 
-.button-primary span,
-.button-secondary span {
+.button-primary span {
   color: #ffd166;
   font-size: 18px;
   transition: transform .2s ease;
 }
 
 .button:hover span { transform: translate(2px, -2px); }
-.button-secondary { backdrop-filter: blur(8px); }
 
 @media (max-width: 640px) {
   .header-book {
@@ -79,7 +70,6 @@
   }
 
   .calendar-mark { font-size: 16px; }
-  .hero-actions { gap: 9px; }
 
   .button {
     min-height: 49px;
@@ -88,8 +78,7 @@
     font-size: 12px;
   }
 
-  .button-primary span,
-  .button-secondary span { font-size: 16px; }
+  .button-primary span { font-size: 16px; }
 }
 
 @media (max-width: 360px) {
