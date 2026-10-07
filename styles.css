@@ -612,6 +612,83 @@ h2 { margin-bottom: 0; color: var(--heading); font-size: clamp(36px, 5vw, 62px);
 }
 .stat-label { color: var(--muted); font-size: 15px; line-height: 1.5; }
 
+/* ————— Tim di balik KENZ.STUDIO ————— */
+.team { background: var(--band-soft); }
+.team-heading h2 { max-width: 640px; }
+.team-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; margin-top: 56px; }
+.team-card {
+  display: grid;
+  justify-items: center;
+  gap: 5px;
+  padding: 34px 28px 38px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--panel);
+  text-align: center;
+  transition: transform .3s ease, border-color .3s ease;
+}
+.team-card:hover { transform: translateY(-5px); border-color: rgba(212, 255, 54, .42); }
+
+/* Foto profil: ring gradien berputar + denyut lembut */
+.team-avatar {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: clamp(112px, 15vw, 150px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  animation: team-float 6s ease-in-out infinite;
+}
+.team-avatar::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #ff8a00, #ffd900, #ffffff, #d4ff36, #ff8a00);
+  animation: team-spin 7s linear infinite;
+}
+[data-theme="light"] .team-avatar::before {
+  background: conic-gradient(from 0deg, #c2410c, #b45309, #1c1d17, #8fae00, #c2410c);
+}
+.team-avatar img {
+  position: relative;
+  z-index: 1;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--band-b);
+  animation: team-pulse 3.2s ease-in-out infinite;
+}
+.team-initials {
+  margin: 24px 0 0;
+  color: transparent;
+  background-image: var(--brand-grad);
+  background-size: 220% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font: 800 13px/1 "Manrope", sans-serif;
+  letter-spacing: 2.6px;
+  animation: bold-color-flow 6s ease-in-out infinite alternate;
+}
+.team-name { margin: 9px 0 0; font-size: 21px; letter-spacing: -.3px; }
+.team-role { margin: 7px 0 0; color: var(--muted); font-size: 13px; letter-spacing: .6px; }
+
+@keyframes team-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes team-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+@keyframes team-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212, 255, 54, .34); }
+  50% { box-shadow: 0 0 0 12px rgba(212, 255, 54, 0); }
+}
+
+/* Angka statistik yang bergerak otomatis */
+.stat-number { font-variant-numeric: tabular-nums; }
+
 .contact { padding: 30px 0 110px; background: var(--band-soft); }
 .contact-card { position: relative; overflow: hidden; padding: 58px 64px; border: 1px solid var(--line); border-radius: 19px; background: radial-gradient(ellipse at 90% 5%, rgba(212,255,54,.13), transparent 40%), var(--contact-surface); }
 .contact-card .eyebrow { margin-bottom: 14px; }
@@ -1097,8 +1174,14 @@ h2 { margin-bottom: 0; color: var(--heading); font-size: clamp(36px, 5vw, 62px);
     border-image: linear-gradient(90deg, var(--stat-accent), transparent) 1;
   }
   .stat-value { color: var(--heading); background-image: none; font-size: clamp(32px, 9vw, 44px); }
+  .stat-number { color: var(--stat-accent); }
   .stat-unit { color: var(--stat-accent); }
   .stat-label { font-size: 12px; }
+  .team-grid { grid-template-columns: 1fr; gap: 16px; margin-top: 34px; }
+  .team-card { padding: 27px 22px 30px; }
+  .team-avatar { width: clamp(96px, 30vw, 126px); }
+  .team-name { font-size: 18px; }
+  .team-role { font-size: 12px; }
   .contact { padding: 16px 0 70px; }
   .contact-card { padding: 31px 24px; border-radius: 14px; }
   .contact-card h2 { font-size: clamp(40px, 10vw, 58px); }
@@ -1164,6 +1247,10 @@ h2 { margin-bottom: 0; color: var(--heading); font-size: clamp(36px, 5vw, 62px);
     animation: none;
   }
   .headline-highlight { color: var(--heading-strong) !important; }
+  .team-avatar, .team-avatar::before, .team-avatar img, .team-initials { animation: none; }
+  .team-avatar::before { background: var(--brand-grad); }
+  .team-avatar img { box-shadow: none; }
+  .team-initials { color: var(--accent) !important; background: none; }
   :is(.menu-pill, .hero-kicker, .hero-overline, .eyebrow, .hero-bottom-note, .service-top, .project-visual-top, .project-meta > div > span, .floating-contact strong, .principles b, .attendance-number > i, .attendance-person > i, .network-label b) {
     animation: none;
   }

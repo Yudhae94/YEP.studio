@@ -16,6 +16,8 @@ const files = new Map([
   ["/logo-icon.png", "logo-icon.png"],
   ["/logo-lockup.png", "logo-lockup.png"],
   ["/logo-wordmark.png", "logo-wordmark.png"],
+  ["/team-yep.png", "team-yep.png"],
+  ["/team-gilang.png", "team-gilang.png"],
 ]);
 const contentTypes = {
   ".html": "text/html; charset=utf-8",

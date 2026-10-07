@@ -1,15 +1,11 @@
+/* KENZ.STUDIO — interaksi landing page.
+   Script ini dimuat dengan `defer`, jadi kode berjalan setelah HTML selesai
+   diparse; konten di bawahnya aman untuk di-query langsung. */
+
 const menuButton = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector("#site-nav");
 const scrollProgress = document.querySelector(".scroll-progress");
 const pageBackdrop = document.querySelector(".page-backdrop");
-
-/* Nomor WhatsApp dinonaktifkan (privasi). Tombol WhatsApp dialihkan ke
-   halaman 404 hingga nomor siap ditampilkan kembali. */
-document.querySelectorAll("[data-whatsapp-link]").forEach((link) => {
-  link.setAttribute("href", "/404.html");
-  link.removeAttribute("target");
-  link.removeAttribute("rel");
-});
 
 /* Template pesan otomatis untuk CTA "Konsultasi Proyek via WhatsApp".
    Isi WHATSAPP_NUMBER dengan format internasional (mis. "6281234567890")
@@ -18,6 +14,14 @@ document.querySelectorAll("[data-whatsapp-link]").forEach((link) => {
 const WHATSAPP_NUMBER = "";
 const WHATSAPP_MESSAGE =
   "Halo Kenz Studio, saya tertarik untuk berkonsultasi mengenai pembuatan [Branding / UI/UX / Web / Mobile App] untuk startup saya. Boleh bantu berikan informasi lebih lanjut?";
+
+/* Nomor WhatsApp dinonaktifkan (privasi). Tombol WhatsApp dialihkan ke
+   halaman 404 hingga nomor siap ditampilkan kembali. */
+document.querySelectorAll("[data-whatsapp-link]").forEach((link) => {
+  link.setAttribute("href", "/404.html");
+  link.removeAttribute("target");
+  link.removeAttribute("rel");
+});
 
 if (WHATSAPP_NUMBER) {
   document.querySelectorAll("[data-whatsapp-cta]").forEach((link) => {
@@ -28,6 +32,21 @@ if (WHATSAPP_NUMBER) {
 }
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+/* Menerapkan tema aktif. theme-init.js sudah menyetel tema sebelum halaman
+   dirender; fungsi ini dipakai saat tema diganti pengguna. */
+const applyTheme = () => {
+  try {
+    const savedTheme = window.localStorage.getItem("kenz-theme");
+    if (savedTheme === "light" || savedTheme === "dark") {
+      document.documentElement.dataset.theme = savedTheme;
+    }
+  } catch (error) {
+    /* Penyimpanan tidak tersedia (mode privat); tema default tetap dipakai. */
+  }
+};
+
+applyTheme();
 
 if (scrollProgress || pageBackdrop) {
   let scrollFrame = 0;
@@ -82,6 +101,83 @@ if (!prefersReducedMotion.matches && "IntersectionObserver" in window) {
   document.querySelectorAll(".reveal").forEach((element) => {
     revealObserver.observe(element);
   });
+}
+
+/* Statistik komitmen berjalan otomatis: 1 jam → 24 jam, 1+ → 90+,
+   lalu berhenti pada nilai akhir (masing-masing dari data-stat-max). */
+const statItems = Array.from(document.querySelectorAll("[data-stat]"));
+const statClock = window.performance || window.Date;
+const now = () => statClock.now();
+
+const easeOutExpo = (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t));
+const statStarted = new WeakSet();
+
+const runStatItem = (item) => {
+  if (statStarted.has(item)) {
+    return;
+  }
+  statStarted.add(item);
+
+  const number = item.querySelector("[data-stat-number]");
+  if (!number) {
+    return;
+  }
+
+  const target = Number(item.getAttribute("data-stat-max"));
+  const start = Number(item.getAttribute("data-stat-start") || 1);
+
+  if (!Number.isFinite(target) || target <= start) {
+    number.textContent = String(Number.isFinite(target) ? target : start);
+    return;
+  }
+
+  const duration = 210 + (target - start) * 22;
+  const startedAt = now();
+
+  const step = () => {
+    const progress = Math.min((now() - startedAt) / duration, 1);
+    const value = Math.round(start + (target - start) * easeOutExpo(progress));
+
+    number.textContent = String(value);
+
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    } else {
+      number.textContent = String(target);
+      item.classList.add("stat-done");
+    }
+  };
+
+  window.requestAnimationFrame(step);
+};
+
+if (statItems.length) {
+  if (prefersReducedMotion.matches) {
+    statItems.forEach((item) => {
+      const number = item.querySelector("[data-stat-number]");
+      if (number) {
+        number.textContent = item.getAttribute("data-stat-max") || "1";
+      }
+    });
+  } else if ("IntersectionObserver" in window) {
+    const statObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            runStatItem(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 },
+    );
+
+    statItems.forEach((item) => statObserver.observe(item));
+    // Jaring pengaman: apa pun yang terjadi, angka tetap berjalan.
+    window.setTimeout(() => statItems.forEach(runStatItem), 2600);
+  } else {
+    statItems.forEach(runStatItem);
+  }
 }
 
 if (menuButton && siteNav) {
@@ -324,4 +420,3 @@ if (themeToggle) {
     syncThemeToggle();
   });
 }
-

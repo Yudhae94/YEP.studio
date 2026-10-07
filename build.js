@@ -15,6 +15,8 @@ const files = [
   "logo-icon.png",
   "logo-lockup.png",
   "logo-wordmark.png",
+  "team-yep.png",
+  "team-gilang.png",
 ];
 
 fs.rmSync(output, { recursive: true, force: true });
