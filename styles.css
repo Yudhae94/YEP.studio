@@ -766,42 +766,41 @@ h2 { margin-bottom: 0; color: var(--heading); font-size: clamp(36px, 5vw, 62px);
 .collab-field textarea[aria-invalid="true"] { border-color: #e0655f; }
 .collab-error { margin: 0; color: #e0655f; font-size: 12px; }
 .collab-status { margin: 0; color: var(--accent); font-size: 12px; }
-.collab-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
-.collab-submit { border: 0; cursor: pointer; }
+.collab-actions { display: flex; flex-wrap: wrap; align-items: stretch; gap: 9px; }
 
 /* WhatsApp di samping tombol kirim email.
-   Warna, bentuk, dan hover disamakan dengan tombol "Kirim via Email" agar serasi. */
+   Bentuk & warnanya dibuat selaras dengan field formulir di atasnya
+   (radius, border, background) supaya tidak terlihat seperti pil besar. */
 .collab-actions .whatsapp-button {
   display: inline-flex;
-  min-height: 58px;
+  min-height: 38px;
+  min-width: 148px;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  padding: 0 22px;
+  gap: 9px;
+  padding: 0 16px;
   border: 1px solid var(--line);
-  border-radius: 32px;
-  background: var(--glass-strong);
+  border-radius: 9px;
+  background: var(--page);
   color: var(--ink);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: .2px;
   transition: transform .2s ease, background .2s ease, border-color .2s ease,
     box-shadow .2s ease, color .2s ease;
 }
 .collab-actions .whatsapp-button .whatsapp-logo {
-  width: 20px;
-  height: 20px;
-  color: #ffd166;
+  width: 18px;
+  height: 18px;
+  color: var(--ink);
 }
 .collab-actions .whatsapp-button:hover,
 .collab-actions .whatsapp-button:focus-visible {
-  transform: translateY(-2px);
   border-color: rgba(255, 173, 0, .75);
-  background: rgba(255, 173, 0, .1);
+  background: var(--page);
   color: var(--ink);
-  box-shadow: 0 0 0 1px rgba(255, 173, 0, .2), 0 0 18px rgba(255, 173, 0, .3);
-}
-.collab-actions .whatsapp-button:focus-visible {
+  box-shadow: 0 0 0 1px rgba(255, 173, 0, .25), 0 0 18px rgba(255, 173, 0, .18);
+}.collab-actions .whatsapp-button:focus-visible {
   outline: 2px solid #ffd166;
   outline-offset: 2px;
 }

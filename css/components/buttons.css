@@ -61,6 +61,22 @@
 
 .button:hover span { transform: translate(2px, -2px); }
 
+/* Tombol kirim di dalam formulir kontak diselaraskan dengan field di atasnya
+   (tinggi, radius, huruf) agar sejajar dengan tombol WhatsApp di sampingnya.
+   Ditaruh di sini karena file ini dimuat setelah styles.css. */
+.collab-submit {
+  min-height: 38px;
+  gap: 9px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--page);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.collab-submit span { font-size: 14px; }
+
 @media (max-width: 640px) {
   .header-book {
     min-height: 42px;
