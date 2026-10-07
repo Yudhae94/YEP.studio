@@ -2,17 +2,30 @@ const menuButton = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector("#site-nav");
 const scrollProgress = document.querySelector(".scroll-progress");
 const pageBackdrop = document.querySelector(".page-backdrop");
-const whatsappNumber = "6281283973788";
-const whatsappMessage =
-  "Halo KENZ.STUDIO, saya ingin berdiskusi tentang proyek digital.";
-const whatsappUrl = new URL(`https://wa.me/${whatsappNumber}`);
-whatsappUrl.searchParams.set("text", whatsappMessage);
 
+/* Nomor WhatsApp dinonaktifkan (privasi). Tombol WhatsApp dialihkan ke
+   halaman 404 hingga nomor siap ditampilkan kembali. */
 document.querySelectorAll("[data-whatsapp-link]").forEach((link) => {
-  link.setAttribute("href", whatsappUrl.href);
-  link.setAttribute("target", "_blank");
-  link.setAttribute("rel", "noopener noreferrer");
+  link.setAttribute("href", "/404.html");
+  link.removeAttribute("target");
+  link.removeAttribute("rel");
 });
+
+/* Template pesan otomatis untuk CTA "Konsultasi Proyek via WhatsApp".
+   Isi WHATSAPP_NUMBER dengan format internasional (mis. "6281234567890")
+   untuk mengaktifkan tautan wa.me. Selama kosong, CTA tetap memakai
+   tautan internal (#contact) yang ada di HTML. */
+const WHATSAPP_NUMBER = "";
+const WHATSAPP_MESSAGE =
+  "Halo Kenz Studio, saya tertarik untuk berkonsultasi mengenai pembuatan [Branding / UI/UX / Web / Mobile App] untuk startup saya. Boleh bantu berikan informasi lebih lanjut?";
+
+if (WHATSAPP_NUMBER) {
+  document.querySelectorAll("[data-whatsapp-cta]").forEach((link) => {
+    link.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+  });
+}
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -94,6 +107,12 @@ const collabError = collabForm
   ? collabForm.querySelector("[data-collab-error]")
   : null;
 const collabTargetEmail = "kenz.studio23@gmail.com";
+const collabStatus = collabForm
+  ? collabForm.querySelector("[data-collab-status]")
+  : null;
+const collabAccessKey = collabForm
+  ? collabForm.getAttribute("data-access-key") || ""
+  : "";
 
 const markCollabField = (field, isValid) => {
   if (field) {
@@ -170,19 +189,77 @@ if (collabForm) {
       return;
     }
 
-    const subject = `[Kolaborasi - ${topic}] ${name}`;
-    const body = [
-      `Nama: ${name}`,
-      `Email: ${email}`,
-      `Jenis kebutuhan: ${topic}`,
-      "",
-      message,
-    ].join("\n");
-    const mailtoUrl = `mailto:${collabTargetEmail}?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(body)}`;
+    if (!collabAccessKey || collabAccessKey.indexOf("GANTI_DENGAN") === 0) {
+      showCollabError(
+        "Formulir belum siap (access key belum diisi). Hubungi kami via email.",
+      );
+      return;
+    }
 
-    window.location.href = mailtoUrl;
+    const submitButton = collabForm.querySelector(".collab-submit");
+    const subject = `[Kolaborasi - ${topic}] ${name}`;
+
+    if (collabStatus) {
+      collabStatus.hidden = true;
+      collabStatus.textContent = "";
+    }
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.dataset.label = submitButton.innerHTML;
+      submitButton.textContent = "Mengirim…";
+    }
+
+    const payload = {
+      access_key: collabAccessKey,
+      subject,
+      from_name: "KENZ.STUDIO — Formulir Kolaborasi",
+      name,
+      email,
+      topic,
+      message,
+      replyto: email,
+    };
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(payload),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        if (!result.success) {
+          throw new Error(result.message || "Pengiriman gagal.");
+        }
+        collabForm.reset();
+        [nameField, emailField, topicField, messageField].forEach((field) => {
+          if (field) {
+            field.removeAttribute("aria-invalid");
+          }
+        });
+        if (collabStatus) {
+          collabStatus.textContent =
+            "Terima kasih! Pesan Anda sudah terkirim ke email kami.";
+          collabStatus.hidden = false;
+        }
+      })
+      .catch(() => {
+        showCollabError(
+          "Maaf, pesan gagal terkirim. Silakan coba lagi atau kirim ke " +
+            collabTargetEmail +
+            ".",
+        );
+      })
+      .finally(() => {
+        if (submitButton) {
+          submitButton.disabled = false;
+          if (submitButton.dataset.label) {
+            submitButton.innerHTML = submitButton.dataset.label;
+          }
+        }
+      });
   });
 
   collabForm.addEventListener("input", (event) => {
