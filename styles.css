@@ -121,7 +121,8 @@
   box-shadow: 0 8px 22px rgba(62, 86, 0, .35);
 }
 [data-theme="light"] .social-links a:hover,
-[data-theme="light"] .social-links .whatsapp-button:hover {
+[data-theme="light"] .social-links .whatsapp-button:hover,
+[data-theme="light"] .collab-actions .whatsapp-button:hover {
   background: rgba(62, 86, 0, .08);
 }
 
@@ -767,12 +768,39 @@ h2 { margin-bottom: 0; color: var(--heading); font-size: clamp(36px, 5vw, 62px);
 .collab-status { margin: 0; color: var(--accent); font-size: 12px; }
 .collab-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
 .collab-submit { border: 0; cursor: pointer; }
+
+/* WhatsApp di samping tombol kirim email — target klik besar dan jelas. */
+.collab-actions .whatsapp-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .2px;
+  transition: color .2s ease, border-color .2s ease, background .2s ease;
+}
+.collab-actions .whatsapp-button .whatsapp-logo { width: 21px; height: 21px; }
+.collab-actions .whatsapp-button:hover {
+  border-color: var(--accent);
+  background: rgba(212, 255, 54, .08);
+  color: var(--accent);
+}
+.collab-actions .whatsapp-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
 .collab-direct { color: var(--muted); font-size: 12px; text-decoration: underline; text-underline-offset: 3px; }
 .collab-direct:hover { color: var(--accent); }
 
 @media (max-width: 700px) {
   .collab-form { margin-top: 26px; padding: 20px 18px; }
   .collab-grid { grid-template-columns: 1fr; }
+  .collab-actions .whatsapp-button { flex: 1 1 auto; justify-content: center; }
 }
 .site-footer { padding-bottom: 25px; background: var(--footer-surface); }
 .footer-main { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 22px 0; border-top: 1px solid var(--line); }
