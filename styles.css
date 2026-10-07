@@ -668,12 +668,11 @@ h2 { margin-bottom: 0; color: var(--heading); font-size: clamp(36px, 5vw, 62px);
   background-size: 220% 100%;
   background-clip: text;
   -webkit-background-clip: text;
-  font: 800 13px/1 "Manrope", sans-serif;
-  letter-spacing: 2.6px;
+  font: 800 24px/1 "Manrope", sans-serif;
+  letter-spacing: 3.4px;
   animation: bold-color-flow 6s ease-in-out infinite alternate;
 }
-.team-name { margin: 9px 0 0; font-size: 21px; letter-spacing: -.3px; }
-.team-role { margin: 7px 0 0; color: var(--muted); font-size: 13px; letter-spacing: .6px; }
+.team-role { margin: 9px 0 0; color: var(--muted); font-size: 13px; letter-spacing: .6px; }
 
 @keyframes team-spin {
   to { transform: rotate(360deg); }
@@ -1208,7 +1207,7 @@ h2 { margin-bottom: 0; color: var(--heading); font-size: clamp(36px, 5vw, 62px);
   .team-grid { grid-template-columns: 1fr; gap: 16px; margin-top: 34px; }
   .team-card { padding: 27px 22px 30px; }
   .team-avatar { width: clamp(96px, 30vw, 126px); }
-  .team-name { font-size: 18px; }
+  .team-initials { font-size: 20px; letter-spacing: 2.8px; }
   .team-role { font-size: 12px; }
   .contact { padding: 16px 0 70px; }
   .contact-card { padding: 31px 24px; border-radius: 14px; }
