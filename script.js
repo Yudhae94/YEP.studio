@@ -2,7 +2,7 @@
    Script ini dimuat dengan `defer`, jadi kode berjalan setelah HTML selesai
    diparse; konten di bawahnya aman untuk di-query langsung. */
 
-const menuButton = document.querySelector(".menu-toggle");
+const menuButton = document.getElementById("menuButton");
 const siteNav = document.querySelector("#site-nav");
 const scrollProgress = document.querySelector(".scroll-progress");
 const pageBackdrop = document.querySelector(".page-backdrop");
