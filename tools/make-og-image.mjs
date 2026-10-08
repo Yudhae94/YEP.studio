@@ -141,6 +141,7 @@ function drawText(text, startX, startY, scale, colorFn) {
   for (const ch of text) {
     const glyph = FONT[ch] || FONT[" "];
     // gambar dulu, lalu geser berdasarkan lebar glyph yang sebenarnya
+    const glyphCols = widthOf(ch);
     for (let row = 0; row < glyph.length; row++) {
       for (let col = 0; col < glyph[row].length; col++) {
         if (glyph[row][col] !== "1") continue;
@@ -153,21 +154,25 @@ function drawText(text, startX, startY, scale, colorFn) {
         }
       }
     }
-    const tracked = widthOf();
-    x += (Math.max(tracked, 2) + 1) * scale;
+    // geser sebesar lebar glyph asli + 1 kolom jarak antarhuruf
+    x += (glyphCols + 1) * scale;
   }
   return x;
 }
 
-// Lebar glyph seragam 5 kolom (kecuali spasi), jadi kelipatan konsisten.
-function widthOf() {
-  return 5;
+// Lebar glyph mengikuti kolom bitmap aslinya (huruf lebar 6 kolom seperti
+// M dan W tidak lagi tumpang tindih dengan huruf berikutnya).
+function widthOf(ch) {
+  const glyph = FONT[ch] || FONT[" "];
+  return glyph[0].length;
 }
 
 // hitung lebar blok teks dengan skala tertentu
 function textWidth(text, scale) {
   let cols = 0;
-  for (let i = 0; i < text.length; i++) cols += Math.max(widthOf(), 2) + 1;
+  const chars = [...text];
+  for (const ch of chars) cols += widthOf(ch) + 1;
+  if (chars.length === 0) return 0;
   return (cols - 1) * scale;
 }
 
