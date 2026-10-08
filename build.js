@@ -15,6 +15,7 @@ const files = [
   "theme-init.js",
   "_headers",
   "logo-icon.png",
+  "og-image.png",
   "logo-lockup.png",
   "logo-wordmark.png",
   "team-yep.png",
