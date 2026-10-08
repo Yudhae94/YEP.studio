@@ -167,7 +167,7 @@ function widthOf() {
 // hitung lebar blok teks dengan skala tertentu
 function textWidth(text, scale) {
   let cols = 0;
-  for (const ch of text) cols += Math.max(widthOf(), 2) + 1;
+  for (let i = 0; i < text.length; i++) cols += Math.max(widthOf(), 2) + 1;
   return (cols - 1) * scale;
 }
 
@@ -288,6 +288,6 @@ const png = Buffer.concat([
   chunk("IEND", Buffer.alloc(0)),
 ]);
 
-const outPath = path.join(__dirname, "og-image.png");
+const outPath = path.join(__dirname, "..", "og-image.png");
 fs.writeFileSync(outPath, png);
 console.log(`Wrote ${outPath} (${W}x${H}, ${(png.length / 1024).toFixed(1)} KB)`);
