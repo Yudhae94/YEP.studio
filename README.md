@@ -63,8 +63,9 @@ push ke branch `main` akan memulai build dan deploy otomatis.
 Jika menggunakan GitHub Actions untuk deploy selain integrasi Workers Builds,
 gunakan Cloudflare API token dan Account ID sebagai repository secrets.
 
-Untuk menghubungkan domain khusus `kenz.studio`, tambahkan domain tersebut pada
-project Worker melalui **Settings → Domains & Routes**.
-Domain harus sudah ditambahkan dan aktif di akun Cloudflare. Tambahkan juga
-`www.kenz.studio` jika varian `www` ingin digunakan. Domain khusus diatur
-terpisah dari alamat Worker `kenz-studio.<subdomain>.workers.dev`.
+Situs memakai domain gratis `https://kenz-studio.pages.dev`, sehingga canonical,
+Open Graph, `robots.txt`, dan `sitemap.xml` menunjuk ke alamat tersebut.
+Domain khusus berbayar tidak diperlukan. Bila suatu saat ingin memakai domain
+khusus, tambahkan pada project Pages melalui **Custom domains**, daftarkan
+domain di akun Cloudflare, lalu perbarui URL di `index.html`, `robots.txt`,
+dan `sitemap.xml`.
